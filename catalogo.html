@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo de productos — Lucmar</title>
+  <meta name="description" content="Explora el catálogo completo de Lucmar: organización de escritorio, ergonomía, iluminación, papelería, tecnología y almacenamiento. Filtra por categoría y precio.">
+  <meta name="theme-color" content="#10203b">
+  <link rel="canonical" href="https://www.lucmar.com/catalogo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Catálogo de productos — Lucmar">
+  <meta property="og:description" content="Accesorios de oficina para ordenar tu día. Pide directo por WhatsApp.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%2317304f'/%3E%3Ctext x='20' y='28' font-family='Segoe UI,sans-serif' font-size='22' font-weight='800' fill='%23f4b95a' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="topbar">
+    <div class="wrap">
+      <span class="promo">🚚 Envío gratis en compras superiores a <strong>Bs&nbsp;350</strong></span>
+      <nav><a href="#ayuda">Ayuda</a><a href="#pedido">Seguimiento de pedido</a><a href="#contacto">Contáctanos</a></nav>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="wrap header-main">
+      <button class="burger" aria-label="Abrir menú" data-icon="menu"></button>
+      <a class="brand" href="index.html" aria-label="Lucmar, inicio">
+        <span class="brand__mark">L</span>
+        <span><span class="brand__name">Luc<span>mar</span></span><span class="brand__tag">Accesorios de oficina</span></span>
+      </a>
+      <form class="searchbar" data-search role="search">
+        <span data-icon="search"></span>
+        <input type="search" placeholder="Buscar organizadores, sillas, lámparas…" aria-label="Buscar productos">
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="header-actions">
+        <a class="icon-btn" href="#cuenta"><span data-icon="user"></span><span>Mi cuenta</span></a>
+        <a class="icon-btn" href="#favoritos"><span data-icon="heart"></span><span>Favoritos</span></a>
+        <a class="icon-btn" href="https://wa.me/59162185698" target="_blank" rel="noopener"><span class="wa-dot" data-icon="wa"></span><span>Ventas</span></a>
+      </div>
+    </div>
+    <nav class="catbar" aria-label="Categorías">
+      <div class="wrap">
+        <a class="all" href="catalogo.html"><span data-icon="menu"></span> Todas las categorías</a>
+        <a href="catalogo.html?cat=escritorio">Organización</a>
+        <a href="catalogo.html?cat=ergonomia">Ergonomía</a>
+        <a href="catalogo.html?cat=papeleria">Papelería</a>
+        <a href="catalogo.html?cat=iluminacion">Iluminación</a>
+        <a href="catalogo.html?cat=tecnologia">Tecnología</a>
+        <a href="catalogo.html?cat=almacenamiento">Almacenamiento</a>
+        <a class="offers" href="catalogo.html">🔥 Ofertas</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== DRAWER MÓVIL ===== -->
+  <div class="drawer-backdrop"></div>
+  <aside class="drawer" aria-label="Menú de navegación">
+    <div class="drawer__head">
+      <a class="brand" href="index.html"><span class="brand__mark">L</span><span class="brand__name">Luc<span>mar</span></span></a>
+      <button data-close-drawer aria-label="Cerrar menú" data-icon="close"></button>
+    </div>
+    <div class="m-search">
+      <form class="searchbar" data-search role="search">
+        <span data-icon="search"></span>
+        <input type="search" placeholder="Buscar productos…" aria-label="Buscar">
+        <button type="submit">Ir</button>
+      </form>
+    </div>
+    <nav>
+      <a href="catalogo.html">Todas las categorías <span data-icon="arrow"></span></a>
+      <a href="catalogo.html?cat=escritorio">Organización de escritorio</a>
+      <a href="catalogo.html?cat=ergonomia">Ergonomía y confort</a>
+      <a href="catalogo.html?cat=papeleria">Papelería y escritura</a>
+      <a href="catalogo.html?cat=iluminacion">Iluminación</a>
+      <a href="catalogo.html?cat=tecnologia">Accesorios tecnológicos</a>
+      <a href="catalogo.html?cat=almacenamiento">Almacenamiento</a>
+    </nav>
+    <div class="drawer__foot">
+      <a class="btn btn-wa btn-block" href="https://wa.me/59162185698" target="_blank" rel="noopener" data-wa><span data-icon="wa"></span> Escríbenos por WhatsApp</a>
+    </div>
+  </aside>
+
+  <main class="wrap">
+    <nav class="breadcrumbs" aria-label="Ruta de navegación">
+      <a href="index.html">Inicio</a><span class="sep">/</span><span>Catálogo</span>
+    </nav>
+
+    <h1 id="catalog-title" style="font-size:clamp(1.7rem,3.6vw,2.6rem);color:var(--navy-800);margin-bottom:.3rem">Catálogo de productos</h1>
+    <p style="color:var(--muted);margin-bottom:1.5rem">Encuentra el accesorio perfecto para tu oficina y pídelo directo por WhatsApp.</p>
+
+    <div class="catalog">
+      <!-- FILTROS -->
+      <aside class="filters" id="filters" aria-label="Filtros">
+        <div class="filters__head">
+          <strong style="font-family:var(--font-display)">Filtros</strong>
+          <button id="filter-close" aria-label="Cerrar filtros" data-icon="close"></button>
+        </div>
+        <div class="filter-block">
+          <h4>Categoría</h4>
+          <div id="filter-cats"></div>
+        </div>
+        <div class="filter-block">
+          <h4>Precio</h4>
+          <div id="filter-prices"></div>
+        </div>
+        <div class="filter-block">
+          <h4>Valoración</h4>
+          <div id="filter-ratings"></div>
+        </div>
+        <div class="filter-block">
+          <a class="btn btn-wa btn-block" href="https://wa.me/59162185698" target="_blank" rel="noopener" data-wa><span data-icon="wa"></span> ¿Dudas? Escríbenos</a>
+        </div>
+      </aside>
+
+      <!-- RESULTADOS -->
+      <div class="catalog-main">
+        <div class="toolbar">
+          <button class="filter-toggle" id="filter-open"><span data-icon="filter"></span> Filtros</button>
+          <p class="count-txt">Mostrando <strong id="result-count">0</strong> productos</p>
+          <div class="sort-select">
+            <label for="sort" style="color:var(--muted);font-size:.9rem">Ordenar por</label>
+            <select id="sort" aria-label="Ordenar productos">
+              <option value="relevancia">Relevancia</option>
+              <option value="precio-asc">Precio: menor a mayor</option>
+              <option value="precio-desc">Precio: mayor a menor</option>
+              <option value="valoracion">Mejor valorados</option>
+              <option value="novedades">Novedades</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" id="catalog-search">
+        <div class="products-grid" id="catalog-grid"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><span class="brand__mark">L</span><span class="brand__name">Luc<span>mar</span></span></a>
+          <p>Accesorios de oficina que ordenan tu día. Calidad, diseño y atención cercana para tu espacio de trabajo.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook" data-icon="fb"></a>
+            <a href="#" aria-label="Instagram" data-icon="ig"></a>
+            <a href="#" aria-label="TikTok" data-icon="tk"></a>
+          </div>
+        </div>
+        <div class="footer-col"><h5>Categorías</h5>
+          <a href="catalogo.html?cat=escritorio">Organización</a>
+          <a href="catalogo.html?cat=ergonomia">Ergonomía</a>
+          <a href="catalogo.html?cat=iluminacion">Iluminación</a>
+          <a href="catalogo.html?cat=tecnologia">Tecnología</a>
+        </div>
+        <div class="footer-col"><h5>Información</h5>
+          <a href="#">Sobre Lucmar</a><a href="#">Envíos y entregas</a>
+          <a href="#">Política de devoluciones</a><a href="#">Términos y condiciones</a>
+        </div>
+        <div class="footer-col"><h5>Contacto</h5>
+          <a href="https://wa.me/59162185698" target="_blank" rel="noopener">WhatsApp: +591 62185698</a>
+          <a href="mailto:ventas@lucmar.com">ventas@lucmar.com</a>
+          <a href="#">Lun a Sáb · 9:00–19:00</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Lucmar. Todos los derechos reservados.</span>
+        <div class="footer-pay"><span>VISA</span><span>MASTERCARD</span><span>QR</span><span>EFECTIVO</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/59162185698" target="_blank" rel="noopener" data-wa aria-label="Escríbenos por WhatsApp">
+    <span data-icon="wa"></span><span class="txt">Escríbenos</span>
+  </a>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
