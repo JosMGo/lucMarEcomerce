@@ -1,0 +1,28 @@
+# Panel de administración (solo local, no subir)
+admin.html
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Variables de entorno
+.env
+.env.local
+
+# Dependencias (si usas Node en futuro)
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+
+# Archivos temporales
+*.tmp
+~*
