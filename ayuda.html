@@ -3,52 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lucmar — Accesorios de oficina que ordenan tu día</title>
-  <meta name="description" content="Lucmar: organizadores, ergonomía, iluminación y accesorios tecnológicos para tu oficina. Productos originales, envío a todo el país y atención directa por WhatsApp.">
+  <title>Ayuda y preguntas frecuentes — Lucmar</title>
+  <meta name="description" content="Resuelve tus dudas sobre compras, pagos, envíos, garantía y devoluciones en Lucmar. Preguntas frecuentes y atención directa por WhatsApp.">
   <meta name="theme-color" content="#10203b">
-  <link rel="canonical" href="https://www.lucmar.com/">
+  <link rel="canonical" href="https://www.lucmar.com/ayuda.html">
 
-  <!-- Open Graph / redes -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lucmar">
-  <meta property="og:title" content="Lucmar — Accesorios de oficina que ordenan tu día">
-  <meta property="og:description" content="Organizadores, ergonomía, iluminación y tecnología para tu oficina. Atención directa por WhatsApp.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="Ayuda y preguntas frecuentes — Lucmar">
+  <meta property="og:description" content="Todo sobre compras, pagos, envíos, garantía y devoluciones.">
 
-  <!-- Favicon SVG -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%2317304f'/%3E%3Ctext x='20' y='28' font-family='Segoe UI,sans-serif' font-size='22' font-weight='800' fill='%23f4b95a' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
 
-  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
-
-  <!-- SEO estructurado -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Store",
-    "name": "Lucmar",
-    "description": "Tienda de accesorios de oficina: organización, ergonomía, iluminación, papelería, tecnología y almacenamiento.",
-    "url": "https://www.lucmar.com/",
-    "telephone": "+59162185698",
-    "priceRange": "Bs",
-    "areaServed": "BO",
-    "sameAs": ["https://facebook.com/", "https://instagram.com/"]
-  }
-  </script>
 </head>
 <body>
 
   <!-- ===== TOP BAR ===== -->
   <div class="topbar">
     <div class="wrap">
-      <span class="promo" data-home-topbar>🚚 Envío gratis en compras superiores a <strong>Bs&nbsp;350</strong></span>
+      <span class="promo">🚚 Envío gratis en compras superiores a <strong>Bs&nbsp;350</strong></span>
       <nav>
-        <a href="ayuda.html">Ayuda</a>
+        <a href="ayuda.html" aria-current="page">Ayuda</a>
         <a href="pedido.html">Seguimiento de pedido</a>
         <a href="contacto.html">Contáctanos</a>
       </nav>
@@ -82,7 +62,6 @@
       </div>
     </div>
 
-    <!-- Barra de categorías -->
     <nav class="catbar" aria-label="Categorías">
       <div class="wrap">
         <a class="all" href="catalogo.html"><span data-icon="menu"></span><span class="lbl-full">Todas las categorías</span><span class="lbl-short">Categorías</span></a>
@@ -117,15 +96,9 @@
     </div>
     <nav>
       <a href="catalogo.html">Todas las categorías <span data-icon="arrow"></span></a>
-      <a href="catalogo.html?cat=escritorio">Organización de escritorio</a>
-      <a href="catalogo.html?cat=ergonomia">Ergonomía y confort</a>
-      <a href="catalogo.html?cat=energia">Energía y respaldo</a>
-      <a href="catalogo.html?cat=iluminacion">Iluminación</a>
-      <a href="catalogo.html?cat=tecnologia">Accesorios tecnológicos</a>
-      <a href="catalogo.html?cat=almacenamiento">Almacenamiento</a>
-      <a href="catalogo.html?cat=audio-video">Audio y video</a>
-      <a href="catalogo.html?cat=redes">Redes y conectividad</a>
-      <a href="catalogo.html?cat=domotica">Domótica</a>
+      <a href="ayuda.html">Ayuda</a>
+      <a href="pedido.html">Seguimiento de pedido</a>
+      <a href="contacto.html">Contáctanos</a>
       <a href="index.html#marcas">Marcas</a>
       <a class="offers" href="catalogo.html">🔥 Ofertas de la semana</a>
     </nav>
@@ -137,70 +110,83 @@
 
   <main>
     <!-- ===== HERO ===== -->
-    <section class="hero" id="hero-carousel" aria-label="Destacados">
-      <div class="hero-slides" id="hero-slides"><!-- se genera desde HOME.slides en js/products.js --></div>
-      <button class="hero-arrow prev" aria-label="Anterior" data-icon="chevL"></button>
-      <button class="hero-arrow next" aria-label="Siguiente" data-icon="chevR"></button>
-      <div class="hero-dots" role="tablist"></div>
-    </section>
-
-    <!-- ===== TRUST ===== -->
-    <section class="trust">
-      <div class="wrap" id="trust-grid" data-reveal-stagger></div>
-    </section>
-
-    <!-- ===== CATEGORÍAS ===== -->
-    <section class="section wrap">
-      <div class="section-head" data-head="cats" data-reveal>
-        <div></div>
-        <a class="link-more" href="catalogo.html">Ver todas <span data-icon="arrow"></span></a>
+    <section class="page-hero">
+      <div class="wrap">
+        <nav class="page-crumbs" aria-label="Ruta">
+          <a href="index.html">Inicio</a><span class="sep">/</span><span>Ayuda</span>
+        </nav>
+        <span class="eyebrow">Centro de ayuda</span>
+        <h1>Preguntas frecuentes</h1>
+        <p>Reunimos las dudas más comunes sobre compras, pagos, envíos y garantía. ¿No encuentras tu respuesta? Escríbenos por WhatsApp.</p>
       </div>
-      <div class="cats-grid" id="cats-grid" data-reveal-stagger></div>
     </section>
 
-    <!-- ===== MARCAS ===== -->
-    <section class="section wrap" id="marcas" style="padding-top:0">
-      <div class="section-head" data-head="brands" data-reveal>
-        <div></div>
-        <a class="link-more" href="catalogo.html">Ver catálogo <span data-icon="arrow"></span></a>
+    <!-- ===== FAQ ===== -->
+    <section class="page-section">
+      <div class="wrap">
+        <div class="faq">
+
+          <h2 class="faq-cat-title">🛒 Compras</h2>
+          <details class="faq-item">
+            <summary>¿Cómo hago una compra en Lucmar?</summary>
+            <div class="faq-body">Elige el producto que te interesa y pulsa <strong>“Pedir por WhatsApp”</strong>. Se abrirá un chat con nuestro equipo de ventas con el producto ya cargado. Ahí confirmamos disponibilidad, precio final y forma de entrega.</div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Los productos son originales?</summary>
+            <div class="faq-body">Sí. Trabajamos únicamente con productos originales de marcas como UGREEN, TOTTO, JBL, TP-Link y más. Cada artículo cuenta con su garantía correspondiente.</div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Puedo comprar al por mayor o para mi empresa?</summary>
+            <div class="faq-body">Claro. Para compras corporativas o al por mayor, <a href="contacto.html">escríbenos</a> y te preparamos una cotización con precios especiales.</div>
+          </details>
+
+          <h2 class="faq-cat-title">💳 Pagos</h2>
+          <details class="faq-item">
+            <summary>¿Qué métodos de pago aceptan?</summary>
+            <div class="faq-body">Aceptamos <strong>pago con QR, transferencia bancaria, tarjeta (VISA/Mastercard) y efectivo</strong> contra entrega en zonas habilitadas. Coordinamos el método contigo por WhatsApp.</div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Debo pagar por adelantado?</summary>
+            <div class="faq-body">Depende de la zona y el tipo de envío. En entregas locales puedes pagar contra entrega; para envíos a otras ciudades se solicita el pago previo. Te lo indicamos al confirmar tu pedido.</div>
+          </details>
+
+          <h2 class="faq-cat-title">🚚 Envíos y entregas</h2>
+          <details class="faq-item">
+            <summary>¿Hacen envíos? ¿A qué zonas?</summary>
+            <div class="faq-body">Sí, realizamos envíos locales y a todo el país. El costo y tiempo dependen de tu ubicación; te lo confirmamos al momento de tu pedido.</div>
+          </details>
+          <details class="faq-item">
+            <summary>¿El envío tiene costo?</summary>
+            <div class="faq-body">El <strong>envío es gratis en compras superiores a Bs 350</strong> dentro de la zona local. Fuera de ese rango o para otras ciudades, el costo se calcula según el destino.</div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cuánto tarda en llegar mi pedido?</summary>
+            <div class="faq-body">Los pedidos locales suelen entregarse el mismo día o al día siguiente. Para otras ciudades, entre 2 y 5 días hábiles. Puedes consultar el estado en <a href="pedido.html">Seguimiento de pedido</a>.</div>
+          </details>
+
+          <h2 class="faq-cat-title">🛡️ Garantía y devoluciones</h2>
+          <details class="faq-item">
+            <summary>¿Los productos tienen garantía?</summary>
+            <div class="faq-body">Sí. Todos nuestros productos cuentan con garantía del fabricante. Guarda tu comprobante de compra: es tu respaldo para cualquier gestión.</div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Puedo devolver o cambiar un producto?</summary>
+            <div class="faq-body">Aceptamos cambios y devoluciones de productos con falla de fábrica dentro del plazo de garantía. El artículo debe estar en buen estado y con su empaque. <a href="contacto.html">Contáctanos</a> para gestionarlo.</div>
+          </details>
+
+        </div>
+
+        <!-- CTA final -->
+        <div class="page-lead" style="margin-top:clamp(2.4rem,5vw,3.5rem)">
+          <h2>¿No resolviste tu duda?</h2>
+          <p>Nuestro equipo te responde directo por WhatsApp.</p>
+          <a class="btn btn-wa btn-lg" href="https://wa.me/59162185698?text=%C2%A1Hola%20Lucmar!%20Tengo%20una%20consulta." target="_blank" rel="noopener" data-wa style="margin-top:1rem">
+            <span data-icon="wa"></span> Escríbenos por WhatsApp
+          </a>
+        </div>
       </div>
-      <div class="brands-grid" id="brands-grid" data-reveal-stagger></div>
-    </section>
-
-    <!-- ===== DESTACADOS ===== -->
-    <section class="section wrap" id="destacados" style="padding-top:0">
-      <div class="section-head" data-head="featured" data-reveal>
-        <div></div>
-        <a class="link-more" href="catalogo.html">Ver todos <span data-icon="arrow"></span></a>
-      </div>
-      <div class="products-grid" id="featured-grid" data-reveal-stagger></div>
-    </section>
-
-    <!-- ===== PROMO BANNER ===== -->
-    <section class="section wrap" style="padding-top:0">
-      <div class="promo-banner" id="promo-banner" data-reveal></div>
-    </section>
-
-    <!-- ===== OFERTAS GRID ===== -->
-    <section class="section wrap" style="padding-top:0">
-      <div class="section-head" data-head="offers" data-reveal>
-        <div></div>
-        <a class="link-more" href="catalogo.html">Ver más <span data-icon="arrow"></span></a>
-      </div>
-      <div class="products-grid" id="offers-grid" data-reveal-stagger></div>
     </section>
   </main>
-
-  <!-- ===== NEWSLETTER ===== -->
-  <section class="newsletter">
-    <div class="wrap">
-      <div id="newsletter-copy" data-reveal></div>
-      <form data-reveal onsubmit="event.preventDefault(); this.reset(); this.querySelector('button').textContent='¡Listo! 🎉';">
-        <input type="email" placeholder="tu@correo.com" required aria-label="Tu correo electrónico">
-        <button class="btn btn-primary" type="submit">Suscribirme</button>
-      </form>
-    </div>
-  </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
@@ -223,11 +209,10 @@
           <a href="catalogo.html?cat=tecnologia">Tecnología</a>
         </div>
         <div class="footer-col">
-          <h5>Información</h5>
-          <a href="#">Sobre Lucmar</a>
-          <a href="#">Envíos y entregas</a>
-          <a href="#">Política de devoluciones</a>
-          <a href="#">Términos y condiciones</a>
+          <h5>Ayuda</h5>
+          <a href="ayuda.html">Preguntas frecuentes</a>
+          <a href="pedido.html">Seguimiento de pedido</a>
+          <a href="contacto.html">Contáctanos</a>
         </div>
         <div class="footer-col">
           <h5>Contacto</h5>
@@ -243,7 +228,6 @@
     </div>
   </footer>
 
-  <!-- ===== WHATSAPP FLOTANTE ===== -->
   <a class="wa-float" href="https://wa.me/59162185698" target="_blank" rel="noopener" data-wa aria-label="Escríbenos por WhatsApp">
     <span data-icon="wa"></span><span class="txt">Escríbenos</span>
   </a>

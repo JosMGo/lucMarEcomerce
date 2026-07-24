@@ -12,6 +12,7 @@
     heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>',
     search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>',
     menu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>',
+    tag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 12 22l-9-9V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>',
     close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
     chevL: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>',
     chevR: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>',
@@ -27,6 +28,9 @@
     fb: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17V.2C16.7.1 15.6 0 14.4 0 11.9 0 10 1.5 10 4.3V6H7v3h3v9h4z"/></svg>',
     ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
     tk: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2c.3 2.3 1.9 4.1 4 4.4v3c-1.5 0-2.9-.4-4-1.2v6.6A6.4 6.4 0 1 1 9.6 8.4v3.1a3.3 3.3 0 1 0 3.3 3.3V2z"/></svg>',
+    mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>',
+    clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+    help: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>',
   };
 
   /* ---------- Utilidades ---------- */
@@ -58,11 +62,31 @@
   function waLink(message) {
     return `https://wa.me/${LUCMAR.whatsapp}?text=${encodeURIComponent(message)}`;
   }
+  /* ---------- Disponibilidad ----------
+     En js/products.js, el campo "stock" es opcional:
+       sin campo  → disponible          stock: 0  → agotado
+       stock: 1-3 → últimas unidades    stock: 20 → disponible                */
+  const agotado = (p) => p.stock === 0;
+  const pocasUnidades = (p) => typeof p.stock === "number" && p.stock > 0 && p.stock <= 3;
+
+  // Código interno del producto (campo "sku" en products.js). Es opcional.
+  const skuLine = (p) => (p.sku ? `🔖 Código: ${p.sku}\n` : "");
+
   function waProduct(p) {
     const url = `${location.origin}${location.pathname.replace(/[^/]*$/, "")}producto.html?id=${p.id}`;
+    if (agotado(p)) {
+      return waLink(
+        `¡Hola ${LUCMAR.brand}! 👋 Vi que este producto está agotado:\n\n` +
+        `🛒 *${p.name}*\n` +
+        skuLine(p) +
+        `🔗 ${url}\n\n` +
+        `¿Cuándo vuelve a estar disponible? ¿Me avisan cuando llegue?`
+      );
+    }
     return waLink(
       `¡Hola ${LUCMAR.brand}! 👋 Me interesa este producto:\n\n` +
       `🛒 *${p.name}*\n` +
+      skuLine(p) +
       `💲 Precio: ${money(p.price)}\n` +
       `🔗 ${url}\n\n` +
       `¿Está disponible? ¿Me pueden dar más información?`
@@ -70,6 +94,16 @@
   }
 
   const catName = (slug) => (CATEGORIES.find((c) => c.slug === slug) || {}).name || "";
+  const brandOf = (slug) => BRANDS.find((b) => b.slug === slug) || null;
+  const brandName = (slug) => (brandOf(slug) || {}).name || "";
+  const brandCount = (slug) => PRODUCTS.filter((p) => p.brand === slug).length;
+
+  /* Logotipo de marca: imagen si existe, si no el nombre en tipografía */
+  function brandMark(b) {
+    return b.logo
+      ? `<img src="${b.logo}" alt="${b.name}" loading="lazy" decoding="async">`
+      : `<span class="brand-tile__word">${b.name}</span>`;
+  }
 
   /* ---------- Estrellas ---------- */
   function stars(rating, reviews) {
@@ -80,22 +114,30 @@
 
   /* ---------- Tarjeta de producto ---------- */
   function productCard(p) {
-    const badge = p.badge
+    const out = agotado(p);
+    // con la cinta de agotado, la etiqueta de descuento sobra y estorba
+    const badge = p.badge && !out
       ? `<span class="product-card__badge ${p.badge === "Nuevo" ? "new" : ""}">${p.badge}</span>` : "";
     const was = p.oldPrice ? `<span class="was">${money(p.oldPrice)}</span>` : "";
-    return `<article class="product-card">
+    return `<article class="product-card${out ? " is-out" : ""}">
       <div class="product-card__media">
         ${badge}
+        ${out ? `<span class="sold-out">Agotado</span>` : ""}
         <button class="product-card__wish" aria-label="Añadir a favoritos">${ICON.heart}</button>
         <a href="producto.html?id=${p.id}" aria-label="Ver ${p.name}">${imgTag(p.img, p.name, 500)}</a>
       </div>
       <div class="product-card__body">
-        <span class="product-card__cat">${catName(p.cat)}</span>
+        <div class="product-card__meta">
+          <span class="product-card__cat">${catName(p.cat)}</span>
+          ${p.brand ? `<a class="brand-chip" href="catalogo.html?marca=${p.brand}">${brandName(p.brand)}</a>` : ""}
+        </div>
         <h3 class="product-card__name"><a href="producto.html?id=${p.id}">${p.name}</a></h3>
         ${stars(p.rating, p.reviews)}
         <div class="product-card__price"><span class="now">${money(p.price)}</span>${was}</div>
-        <a class="btn btn-wa btn-block product-card__cta" href="${waProduct(p)}" target="_blank" rel="noopener"
-           data-wa aria-label="Pedir ${p.name} por WhatsApp">${ICON.wa} Pedir por WhatsApp</a>
+        <a class="btn ${out ? "btn-primary" : "btn-wa"} btn-block product-card__cta" href="${waProduct(p)}"
+           target="_blank" rel="noopener" data-wa
+           aria-label="${out ? `Consultar cuándo llega ${p.name}` : `Pedir ${p.name} por WhatsApp`}"
+           >${ICON.wa} ${out ? "Consultar cuándo llega" : "Pedir por WhatsApp"}</a>
       </div>
     </article>`;
   }
@@ -170,11 +212,29 @@
      PÁGINA: HOME
      ========================================================================== */
   function initHome() {
+    if ($("#hero-slides") || $("#cats-grid")) renderHomeContent();
+
     // categorías
     const cg = $("#cats-grid");
     if (cg) cg.innerHTML = CATEGORIES.map((c) =>
       `<a class="cat-card" href="catalogo.html?cat=${c.slug}">${imgTag(c.img, c.name, 500)}<span>${c.name}</span></a>`
     ).join("");
+
+    // marcas (las que ya tienen productos primero; las demás quedan "Próximamente")
+    const bg = $("#brands-grid");
+    if (bg) {
+      const list = [...BRANDS].sort((a, b) => brandCount(b.slug) - brandCount(a.slug));
+      bg.innerHTML = list.map((b) => {
+        const n = brandCount(b.slug);
+        return n
+          ? `<a class="brand-tile" href="catalogo.html?marca=${b.slug}" aria-label="Ver productos ${b.name}">
+               ${brandMark(b)}<span class="brand-tile__tag">${b.tagline}</span>
+               <span class="brand-tile__n">${n} producto${n > 1 ? "s" : ""}</span></a>`
+          : `<span class="brand-tile is-soon" aria-label="${b.name}, próximamente">
+               ${brandMark(b)}<span class="brand-tile__tag">${b.tagline}</span>
+               <span class="brand-tile__n">Próximamente</span></span>`;
+      }).join("");
+    }
 
     // destacados (8 primeros con mejor rating)
     const fg = $("#featured-grid");
@@ -189,6 +249,105 @@
 
     initCarousel();
     bindWaToast();
+  }
+
+  /* ==========================================================================
+     CONTENIDO EDITABLE DEL INICIO (objeto HOME de js/products.js)
+     ========================================================================== */
+  const escHtml = (s) => String(s == null ? "" : s)
+    .replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  // *texto* → <em>texto</em>
+  const rich = (s) => escHtml(s).replace(/\*([^*]+)\*/g, "<em>$1</em>");
+
+  // "whatsapp" → enlace al chat de ventas
+  function ctaAttrs(href) {
+    if (String(href).trim().toLowerCase() === "whatsapp") {
+      return `href="${waLink(`¡Hola ${LUCMAR.brand}! 👋 Quisiera información sobre sus productos.`)}" target="_blank" rel="noopener" data-wa`;
+    }
+    return `href="${escHtml(href)}"`;
+  }
+
+  function heroImg(id, alt, eager) {
+    const src = uImgSafe(id, 1100);
+    const ph = placeholder(alt).replace(/"/g, "&quot;");
+    return `<img src="${src}" alt="${escHtml(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'}
+      onerror="this.onerror=null;this.src='${ph}'">`;
+  }
+
+  function sectionHead(key) {
+    const s = (HOME.sections || {})[key];
+    const box = $(`.section-head[data-head="${key}"] > div:first-child`);
+    if (!s || !box) return;
+    box.innerHTML = `${s.eyebrow ? `<span class="eyebrow">${escHtml(s.eyebrow)}</span>` : ""}
+      <h2>${rich(s.title)}</h2>
+      ${s.sub ? `<p class="sub">${escHtml(s.sub)}</p>` : ""}`;
+  }
+
+  function renderHomeContent() {
+    if (typeof HOME === "undefined") return;
+
+    // barra promocional superior
+    const tb = $("[data-home-topbar]");
+    if (tb && HOME.topbar) tb.innerHTML = escHtml(HOME.topbar);
+
+    // diapositivas del hero
+    const hs = $("#hero-slides");
+    if (hs && HOME.slides) {
+      hs.innerHTML = HOME.slides.map((s, k) => `
+        <div class="hero-slide${k === 0 ? " active" : ""}">
+          <div class="wrap hero-inner">
+            <div class="hero-copy"${k === 0 ? " data-reveal" : ""}>
+              ${s.eyebrow ? `<span class="eyebrow">${escHtml(s.eyebrow)}</span>` : ""}
+              <h1>${rich(s.title)}</h1>
+              ${s.text ? `<p>${escHtml(s.text)}</p>` : ""}
+              <div class="hero-cta">
+                ${s.cta1 && s.cta1.text ? `<a class="btn btn-amber btn-lg" ${ctaAttrs(s.cta1.href)}>${escHtml(s.cta1.text)}</a>` : ""}
+                ${s.cta2 && s.cta2.text ? `<a class="btn btn-ghost btn-lg" ${ctaAttrs(s.cta2.href)}>${escHtml(s.cta2.text)}</a>` : ""}
+              </div>
+            </div>
+            <div class="hero-media"${k === 0 ? " data-reveal" : ""}>
+              ${heroImg(s.img, s.alt || s.title, k === 0)}
+              ${s.badgeN ? `<div class="hero-badge"><span class="n">${escHtml(s.badgeN)}</span><span class="t">${escHtml(s.badgeT || "")}</span></div>` : ""}
+            </div>
+          </div>
+        </div>`).join("");
+    }
+
+    // franja de confianza
+    const tg = $("#trust-grid");
+    if (tg && HOME.trust) {
+      tg.innerHTML = HOME.trust.map((t) =>
+        `<div class="trust-item"><span class="ic">${ICON[t.icon] || ICON.check}</span>
+          <div><strong>${escHtml(t.title)}</strong><span>${escHtml(t.text)}</span></div></div>`).join("");
+    }
+
+    // encabezados de sección
+    ["cats", "brands", "featured", "offers"].forEach(sectionHead);
+
+    // banner promocional
+    const pb = $("#promo-banner"), pr = HOME.promo;
+    if (pb && pr) {
+      pb.innerHTML = `<span class="glow"></span>
+        <div class="wrap">
+          <div>
+            ${pr.eyebrow ? `<span class="eyebrow" style="color:var(--amber-400)">${escHtml(pr.eyebrow)}</span>` : ""}
+            <h2>${rich(pr.title)}</h2>
+            ${pr.text ? `<p>${escHtml(pr.text)}</p>` : ""}
+            <div class="hero-cta" style="margin-top:1.4rem">
+              ${pr.cta1 && pr.cta1.text ? `<a class="btn btn-amber btn-lg" ${ctaAttrs(pr.cta1.href)}>${escHtml(pr.cta1.text)}</a>` : ""}
+              ${pr.cta2 && pr.cta2.text ? `<a class="btn btn-wa btn-lg" ${ctaAttrs(pr.cta2.href)}>${ICON.wa} ${escHtml(pr.cta2.text)}</a>` : ""}
+            </div>
+          </div>
+          <div class="promo-media">${imgTag(pr.img, pr.alt || pr.title, 900)}</div>
+        </div>`;
+    }
+
+    // newsletter
+    const nl = $("#newsletter-copy");
+    if (nl && HOME.newsletter) {
+      nl.innerHTML = `<h3>${escHtml(HOME.newsletter.title)}</h3><p>${escHtml(HOME.newsletter.text)}</p>`;
+    }
   }
 
   /* ---------- Carrusel hero ---------- */
@@ -224,6 +383,7 @@
     const params = new URLSearchParams(location.search);
     const state = {
       cats: new Set(params.get("cat") ? [params.get("cat")] : []),
+      brands: new Set(params.get("marca") ? [params.get("marca")] : []),
       prices: new Set(),
       ratings: new Set(),
       q: params.get("q") || "",
@@ -238,6 +398,19 @@
       return `<label class="filter-opt"><input type="checkbox" value="${c.slug}" data-f="cat" ${checked}>
         <span>${c.name}</span><span class="count">${n}</span></label>`;
     }).join("");
+
+    // Filtros de marca (solo las que tienen productos, ordenadas alfabéticamente)
+    const brandFilters = $("#filter-brands");
+    if (brandFilters) {
+      brandFilters.innerHTML = BRANDS
+        .filter((b) => brandCount(b.slug) > 0)
+        .sort((a, b) => a.name.localeCompare(b.name, "es"))
+        .map((b) => {
+          const checked = state.brands.has(b.slug) ? "checked" : "";
+          return `<label class="filter-opt"><input type="checkbox" value="${b.slug}" data-f="brand" ${checked}>
+            <span>${b.name}</span><span class="count">${brandCount(b.slug)}</span></label>`;
+        }).join("");
+    }
 
     // Filtros de precio
     $("#filter-prices").innerHTML = PRICE_RANGES.map((r, k) =>
@@ -259,8 +432,9 @@
 
     // Listeners de filtros
     $$("input[data-f]").forEach((inp) => inp.addEventListener("change", (e) => {
-      const set = { cat: state.cats, price: state.prices, rating: state.ratings }[e.target.dataset.f];
-      const val = e.target.dataset.f === "cat" ? e.target.value : Number(e.target.value);
+      const f = e.target.dataset.f;
+      const set = { cat: state.cats, brand: state.brands, price: state.prices, rating: state.ratings }[f];
+      const val = (f === "cat" || f === "brand") ? e.target.value : Number(e.target.value);
       e.target.checked ? set.add(val) : set.delete(val);
       render();
     }));
@@ -275,6 +449,7 @@
 
     function match(p) {
       if (state.cats.size && !state.cats.has(p.cat)) return false;
+      if (state.brands.size && !state.brands.has(p.brand)) return false;
       if (state.prices.size) {
         const ok = [...state.prices].some((k) => p.price >= PRICE_RANGES[k].min && p.price < PRICE_RANGES[k].max);
         if (!ok) return false;
@@ -284,7 +459,7 @@
         if (p.rating < min) return false;
       }
       if (state.q) {
-        const t = (p.name + " " + catName(p.cat) + " " + p.desc).toLowerCase();
+        const t = (p.name + " " + catName(p.cat) + " " + brandName(p.brand) + " " + p.desc).toLowerCase();
         if (!t.includes(state.q.toLowerCase())) return false;
       }
       return true;
@@ -310,7 +485,10 @@
       bindWaToast(grid);
       // sincronizar título
       const t = $("#catalog-title");
-      if (t && state.cats.size === 1) t.textContent = catName([...state.cats][0]);
+      if (t) {
+        if (state.brands.size === 1 && state.cats.size === 0) t.textContent = brandName([...state.brands][0]);
+        else if (state.cats.size === 1) t.textContent = catName([...state.cats][0]);
+      }
     }
 
     render();
@@ -345,21 +523,30 @@
         </div>
       </div>
       <div class="pdp-info">
-        <span class="product-card__cat">${catName(p.cat)}</span>
+        <div class="product-card__meta">
+          <span class="product-card__cat">${catName(p.cat)}</span>
+          ${p.brand ? `<a class="brand-chip" href="catalogo.html?marca=${p.brand}">${brandName(p.brand)}</a>` : ""}
+        </div>
         <h1>${p.name}</h1>
+        ${p.sku ? `<p class="pdp-sku">Cód. ${p.sku}</p>` : ""}
         ${stars(p.rating, p.reviews)}
         <div class="pdp-price" style="margin-top:1rem">
           <span class="now">${money(p.price)}</span>
           ${p.oldPrice ? `<span class="was">${money(p.oldPrice)}</span><span class="off">-${off}%</span>` : ""}
         </div>
-        <p class="pdp-stock"><span class="dot"></span> En stock · listo para entrega</p>
+        <p class="pdp-stock${agotado(p) ? " is-out" : pocasUnidades(p) ? " is-low" : ""}"><span class="dot"></span> ${
+          agotado(p) ? "Agotado · consúltanos cuándo llega"
+          : pocasUnidades(p) ? `¡Últimas ${p.stock} unidad${p.stock === 1 ? "" : "es"}!`
+          : "En stock · listo para entrega"
+        }</p>
         <p class="pdp-desc">${p.desc}</p>
         <ul class="pdp-features">
           ${p.features.map((f) => `<li>${ICON.check}<span>${f}</span></li>`).join("")}
         </ul>
         <div class="pdp-actions">
-          <a class="btn btn-wa btn-lg btn-block" href="${waProduct(p)}" target="_blank" rel="noopener" data-wa>
-            ${ICON.wa} Pedir por WhatsApp
+          <a class="btn ${agotado(p) ? "btn-primary" : "btn-wa"} btn-lg btn-block" href="${waProduct(p)}"
+             target="_blank" rel="noopener" data-wa>
+            ${ICON.wa} ${agotado(p) ? "Consultar cuándo llega" : "Pedir por WhatsApp"}
           </a>
           <div class="row">
             <a class="btn btn-ghost btn-block" href="${waLink(`¡Hola ${LUCMAR.brand}! Tengo una consulta sobre *${p.name}*.`)}" target="_blank" rel="noopener" data-wa>
@@ -386,15 +573,20 @@
     // relacionados
     const rel = $("#related-grid");
     if (rel) {
-      const list = PRODUCTS.filter((x) => x.cat === p.cat && x.id !== p.id).slice(0, 4);
-      const fill = list.length < 4 ? PRODUCTS.filter((x) => x.id !== p.id && !list.includes(x)).slice(0, 4 - list.length) : [];
+      // primero misma marca, luego misma categoría, luego lo que falte
+      const same = (fn) => PRODUCTS.filter((x) => x.id !== p.id && fn(x));
+      const list = [...same((x) => x.brand === p.brand)];
+      same((x) => x.cat === p.cat && !list.includes(x)).forEach((x) => list.push(x));
+      list.splice(4);
+      const fill = list.length < 4 ? same((x) => !list.includes(x)).slice(0, 4 - list.length) : [];
       rel.innerHTML = [...list, ...fill].map(productCard).join("");
     }
 
     // JSON-LD dinámico del producto
     const ld = {
       "@context": "https://schema.org", "@type": "Product", name: p.name, description: p.desc,
-      image: uImgSafe(p.img, 900), brand: { "@type": "Brand", name: "Lucmar" },
+      image: uImgSafe(p.img, 900), brand: { "@type": "Brand", name: brandName(p.brand) || "Lucmar" },
+      seller: { "@type": "Organization", name: "Lucmar" },
       aggregateRating: { "@type": "AggregateRating", ratingValue: p.rating, reviewCount: p.reviews },
       offers: { "@type": "Offer", price: p.price, priceCurrency: "BOB", availability: "https://schema.org/InStock" },
     };

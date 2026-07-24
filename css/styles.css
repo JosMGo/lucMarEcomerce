@@ -197,17 +197,57 @@ p { margin: 0; }
 
 /* Barra de categorías */
 .catbar { background: var(--navy-800); color: #e8edf4; }
-.catbar .wrap { display: flex; align-items: center; gap: .3rem; overflow-x: auto; scrollbar-width: none; }
+.catbar .wrap {
+  display: flex; align-items: center;
+  gap: 0;
+  /* gutter propio, más estrecho que el del resto del sitio: la barra necesita
+     todo el ancho posible para que entren las 11 etiquetas */
+  padding-inline: clamp(.5rem, 1.2vw, 1rem);
+  overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain;
+  /* Sombras de scroll: los degradados "local" viajan con el contenido y tapan a
+     los "scroll", así que la sombra solo se ve si queda algo fuera de la vista. */
+  background:
+    linear-gradient(to right, var(--navy-800), rgba(16,32,59,0)) 0 0 / 30px 100% no-repeat local,
+    linear-gradient(to left,  var(--navy-800), rgba(16,32,59,0)) 100% 0 / 30px 100% no-repeat local,
+    linear-gradient(to right, rgba(11,21,38,.85), rgba(11,21,38,0)) 0 0 / 24px 100% no-repeat scroll,
+    linear-gradient(to left,  rgba(11,21,38,.85), rgba(11,21,38,0)) 100% 0 / 24px 100% no-repeat scroll;
+}
 .catbar .wrap::-webkit-scrollbar { display: none; }
 .catbar a {
-  display: inline-flex; align-items: center; gap: .45rem; padding: .85rem .95rem;
-  font-size: .9rem; font-weight: 600; white-space: nowrap; color: #d3ddea;
+  display: inline-flex; align-items: center; gap: .35rem;
+  /* medidas fijas a propósito: el contenedor está topado en 1240 px, así que
+     dimensionar con vw hacía crecer el texto dentro de una caja que no crece */
+  padding: .8rem .55rem;
+  font-size: .82rem;
+  font-weight: 600; white-space: nowrap; color: #d3ddea;
   border-bottom: 3px solid transparent; transition: color .2s, border-color .2s;
 }
+/* sin esto un SVG sin width/height se dimensiona solo y descuadra la barra */
+.catbar a svg { width: 1.15em; height: 1.15em; flex: none; }
 .catbar a:hover { color: #fff; border-color: var(--amber-500); }
-.catbar a.all { background: var(--navy-700); font-weight: 700; }
-.catbar a.offers { color: var(--amber-400); margin-left: auto; }
+.catbar a.all,
+.catbar a.brands { background: var(--navy-700); font-weight: 700; }
+/* separa el par "categorías / marcas" del listado de categorías */
+.catbar a.brands { margin-right: .4rem; }
+.catbar a.offers { color: var(--amber-400); margin-left: auto; padding-right: .2rem; }
 .catbar a.offers:hover { color: var(--amber-400); }
+/* franja intermedia: se acorta el rótulo largo para ganar ~90 px */
+.catbar a.all .lbl-short { display: none; }
+@media (max-width: 1150px) {
+  .catbar a.all .lbl-full  { display: none; }
+  .catbar a.all .lbl-short { display: inline; }
+}
+/* franja estrecha: último apretón para que "Ofertas" no quede fuera */
+@media (max-width: 1040px) {
+  .catbar a { font-size: .75rem; padding-inline: .34rem; }
+  .catbar a svg { width: 1em; height: 1em; }
+  .catbar a.brands { margin-right: .22rem; }
+}
+/* justo antes de saltar al menú móvil: se sacrifican los iconos, no las etiquetas */
+@media (max-width: 940px) {
+  .catbar a.all svg, .catbar a.brands svg { display: none; }
+  .catbar a { padding-inline: .3rem; }
+}
 @media (max-width: 860px) { .catbar { display: none; } }
 
 /* ==========================================================================
@@ -315,6 +355,38 @@ p { margin: 0; }
 @media (max-width: 560px) { .cats-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* ==========================================================================
+   MARCAS
+   ========================================================================== */
+.brands-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 18vw, 180px), 1fr)); gap: clamp(.7rem, 1.4vw, 1rem); }
+.brand-tile {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .35rem;
+  min-height: 170px; padding: 1rem .35rem; text-align: center;
+  background: #fff; border: 1.5px solid var(--line); border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.brand-tile img { width: 100%; max-width: none; height: clamp(80px, 11vw, 120px); object-fit: contain; }
+.brand-tile__word { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; letter-spacing: -.02em; color: var(--navy-800); line-height: 1.1; }
+.brand-tile__tag { font-size: .74rem; color: var(--muted); line-height: 1.25; }
+.brand-tile__n { font-size: .72rem; font-weight: 700; color: var(--amber-600); text-transform: uppercase; letter-spacing: .04em; }
+a.brand-tile:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--navy-500); }
+.brand-tile.is-soon { opacity: .62; box-shadow: none; background: var(--surface); }
+.brand-tile.is-soon .brand-tile__n { color: var(--muted); }
+@media (max-width: 520px) {
+  .brands-grid { grid-template-columns: repeat(2, 1fr); }
+  .brand-tile { min-height: 140px; }
+  .brand-tile img { height: clamp(64px, 18vw, 90px); }
+}
+
+/* Chip de marca en tarjetas y ficha */
+.product-card__meta { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.brand-chip {
+  flex: none; font-size: .7rem; font-weight: 800; letter-spacing: .03em; color: var(--navy-700);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: .15rem .5rem;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.brand-chip:hover { background: var(--navy-700); color: #fff; border-color: var(--navy-700); }
+
+/* ==========================================================================
    PRODUCT CARD
    ========================================================================== */
 .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); }
@@ -333,6 +405,25 @@ p { margin: 0; }
   font-size: .72rem; font-weight: 800; padding: .28rem .55rem; border-radius: 999px; letter-spacing: .02em;
 }
 .product-card__badge.new { background: var(--navy-700); }
+
+/* ---------- Producto agotado ---------- */
+/* la foto se atenúa y una cinta la cruza: se distingue de un vistazo en la cuadrícula */
+.product-card.is-out .product-card__media::after {
+  content: ""; position: absolute; inset: 0; background: rgba(244,247,251,.62); z-index: 1;
+}
+.product-card.is-out .product-card__media img { filter: saturate(.35); }
+.product-card.is-out:hover .product-card__media img { transform: none; }
+.sold-out {
+  position: absolute; z-index: 2; top: 50%; left: 50%;
+  translate: -50% -50%; rotate: -7deg;
+  padding: .42rem 1.5rem; width: 84%; text-align: center;
+  background: var(--navy-800); color: #fff;
+  font-family: var(--font-display); font-weight: 800; font-size: .92rem;
+  text-transform: uppercase; letter-spacing: .14em;
+  box-shadow: 0 6px 18px -8px rgba(11,21,38,.75);
+}
+/* el precio de un producto que no puedes comprar no debe gritar */
+.product-card.is-out .product-card__price .now { color: var(--ink-2); }
 .product-card__wish {
   position: absolute; top: .6rem; right: .6rem; z-index: 2; width: 34px; height: 34px; border-radius: 999px;
   background: rgba(255,255,255,.92); display: grid; place-items: center; color: var(--navy-700);
@@ -385,6 +476,9 @@ p { margin: 0; }
 .filter-opt input { width: 17px; height: 17px; accent-color: var(--navy-600); cursor: pointer; }
 .filter-opt:hover { color: var(--navy-700); }
 .filter-opt .count { margin-left: auto; color: var(--muted); font-size: .8rem; }
+.filter-scroll { max-height: 240px; overflow-y: auto; padding-right: .3rem; }
+.filter-scroll::-webkit-scrollbar { width: 6px; }
+.filter-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
 
 .catalog-main .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.4rem; flex-wrap: wrap; }
 .catalog-main .toolbar .count-txt { color: var(--muted); font-size: .92rem; }
@@ -438,11 +532,19 @@ p { margin: 0; }
 .pdp-features { display: grid; gap: .6rem; margin-bottom: 1.6rem; }
 .pdp-features li { display: flex; align-items: flex-start; gap: .6rem; color: var(--ink-2); }
 .pdp-features svg { width: 20px; height: 20px; color: var(--ok); flex: none; margin-top: 1px; }
+/* código interno del producto: informativo, nunca debe competir con el nombre */
+.pdp-sku { font-size: .82rem; color: var(--muted); letter-spacing: .03em; margin: .45rem 0 .6rem; }
 .pdp-stock { display: inline-flex; align-items: center; gap: .45rem; color: var(--ok); font-weight: 700; font-size: .9rem; margin-bottom: 1.2rem; }
 .pdp-stock .dot { width: 9px; height: 9px; border-radius: 999px; background: var(--ok); box-shadow: 0 0 0 4px rgba(23,168,107,.16); }
+.pdp-stock.is-out { color: var(--sale); }
+.pdp-stock.is-out .dot { background: var(--sale); box-shadow: 0 0 0 4px rgba(214,60,44,.16); }
+.pdp-stock.is-low { color: var(--amber-600); }
+.pdp-stock.is-low .dot { background: var(--amber-600); box-shadow: 0 0 0 4px rgba(196,127,24,.18); }
 .pdp-actions { display: flex; flex-direction: column; gap: .7rem; }
 .pdp-actions .row { display: flex; gap: .7rem; }
 .pdp-note { font-size: .84rem; color: var(--muted); margin-top: .4rem; display: flex; align-items: center; gap: .4rem; }
+/* sin tamaño explícito el SVG se dimensiona solo y ocupa media página */
+.pdp-note svg { width: 15px; height: 15px; flex: none; }
 .pdp-perks { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
 .pdp-perk { display: flex; flex-direction: column; align-items: flex-start; gap: .3rem; font-size: .8rem; color: var(--muted); }
 .pdp-perk svg { width: 22px; height: 22px; color: var(--navy-600); }
@@ -522,3 +624,112 @@ p { margin: 0; }
   [data-reveal], [data-reveal-stagger] > * { opacity: 1 !important; transform: none !important; }
   .wa-float::after { display: none; }
 }
+
+/* ==========================================================================
+   PÁGINAS INTERNAS (contacto, ayuda, seguimiento)
+   ========================================================================== */
+
+/* ---------- Encabezado de página ---------- */
+.page-hero {
+  background: linear-gradient(160deg, var(--navy-800), var(--navy-600));
+  color: #fff; padding-block: clamp(2.4rem, 6vw, 4rem);
+}
+.page-hero .wrap { max-width: 760px; text-align: center; }
+.page-hero .eyebrow { color: var(--amber-400); font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; }
+.page-hero h1 { font-size: clamp(1.8rem, 5vw, 2.9rem); margin: .5rem 0 .7rem; }
+.page-hero p { color: #cdd7e6; font-size: clamp(1rem, 2.2vw, 1.12rem); }
+.page-crumbs { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem; margin-bottom: 1rem; font-size: .84rem; color: #9fb0c6; }
+.page-crumbs a:hover { color: #fff; }
+.page-crumbs .sep { opacity: .5; }
+
+/* ---------- Layout de contenido ---------- */
+.page-section { padding-block: clamp(2.4rem, 6vw, 4.5rem); }
+.page-section .wrap { max-width: 980px; }
+.page-lead { text-align: center; max-width: 620px; margin: 0 auto clamp(1.8rem, 4vw, 2.6rem); color: var(--muted); }
+.page-lead h2 { color: var(--ink); font-size: clamp(1.4rem, 3.5vw, 2rem); margin-bottom: .6rem; }
+
+/* ---------- Tarjetas de contacto ---------- */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: clamp(1rem, 2.4vw, 1.4rem); }
+.contact-card {
+  display: flex; flex-direction: column; align-items: flex-start; gap: .55rem;
+  padding: 1.5rem; background: #fff; border: 1.5px solid var(--line); border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--navy-500); }
+.contact-card__ico {
+  display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px;
+  background: var(--surface); color: var(--navy-700);
+}
+.contact-card__ico svg { width: 24px; height: 24px; }
+.contact-card.is-wa .contact-card__ico { background: rgba(29,168,81,.12); color: var(--wa-600); }
+.contact-card h3 { font-size: 1.08rem; }
+.contact-card p { color: var(--muted); font-size: .92rem; }
+.contact-card strong { color: var(--ink); font-weight: 700; }
+
+/* ---------- Formulario ---------- */
+.form-card {
+  margin-top: clamp(1.8rem, 4vw, 2.6rem); padding: clamp(1.4rem, 3vw, 2.2rem);
+  background: #fff; border: 1.5px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm);
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.2rem; }
+.field { display: flex; flex-direction: column; gap: .4rem; }
+.field.col-2 { grid-column: 1 / -1; }
+.field label { font-weight: 600; font-size: .9rem; color: var(--ink-2); }
+.field input, .field select, .field textarea {
+  width: 100%; padding: .75rem .9rem; border: 1.5px solid var(--line); border-radius: var(--r);
+  background: var(--surface); color: var(--ink); transition: border-color .2s, background .2s, box-shadow .2s;
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--navy-500); background: #fff; box-shadow: 0 0 0 3px rgba(42,86,143,.12);
+}
+.form-card .btn { margin-top: 1.3rem; }
+.form-note { margin-top: .9rem; font-size: .84rem; color: var(--muted); text-align: center; }
+@media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* ---------- FAQ (acordeón nativo) ---------- */
+.faq { display: grid; gap: .8rem; }
+.faq-cat-title { margin: 1.8rem 0 .3rem; font-size: 1.15rem; color: var(--navy-700); }
+.faq-cat-title:first-child { margin-top: 0; }
+.faq-item {
+  background: #fff; border: 1.5px solid var(--line); border-radius: var(--r); overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+.faq-item[open] { border-color: var(--navy-500); box-shadow: var(--shadow-sm); }
+.faq-item summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer;
+  padding: 1.05rem 1.2rem; font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; flex: none; display: grid; place-items: center; width: 26px; height: 26px;
+  border-radius: 50%; background: var(--surface); color: var(--navy-700); font-size: 1.3rem; line-height: 1;
+  transition: transform .3s var(--ease), background .2s, color .2s;
+}
+.faq-item[open] summary::after { content: "\2212"; background: var(--navy-700); color: #fff; transform: rotate(180deg); }
+.faq-item .faq-body { padding: 0 1.2rem 1.15rem; color: var(--ink-2); }
+.faq-item .faq-body a { color: var(--navy-600); font-weight: 600; text-decoration: underline; }
+
+/* ---------- Seguimiento de pedido ---------- */
+.track-box {
+  max-width: 560px; margin: 0 auto; padding: clamp(1.4rem, 3vw, 2.2rem); text-align: center;
+  background: #fff; border: 1.5px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm);
+}
+.track-form { display: flex; gap: .7rem; margin-top: 1.2rem; }
+.track-form input {
+  flex: 1; padding: .8rem 1rem; border: 1.5px solid var(--line); border-radius: var(--r);
+  background: var(--surface); transition: border-color .2s, box-shadow .2s;
+}
+.track-form input:focus { outline: none; border-color: var(--navy-500); background: #fff; box-shadow: 0 0 0 3px rgba(42,86,143,.12); }
+.track-form .btn { flex: none; }
+@media (max-width: 480px) { .track-form { flex-direction: column; } .track-form .btn { width: 100%; } }
+
+.track-steps { display: grid; gap: 1.1rem; max-width: 620px; margin: clamp(2rem, 5vw, 3rem) auto 0; }
+.track-step { display: flex; align-items: flex-start; gap: 1rem; text-align: left; }
+.track-step__n {
+  flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--navy-700); color: #fff; font-family: var(--font-display); font-weight: 800;
+}
+.track-step:nth-child(1) .track-step__n { background: var(--wa-600); }
+.track-step h4 { font-size: 1.05rem; margin-bottom: .15rem; }
+.track-step p { color: var(--muted); font-size: .92rem; }

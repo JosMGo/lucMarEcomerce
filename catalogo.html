@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Catálogo de productos — Lucmar</title>
-  <meta name="description" content="Explora el catálogo completo de Lucmar: organización de escritorio, ergonomía, iluminación, papelería, tecnología y almacenamiento. Filtra por categoría y precio.">
+  <meta name="description" content="Explora el catálogo completo de Lucmar: organización de escritorio, ergonomía, iluminación, energía y respaldo, tecnología, almacenamiento, audio y video, redes y hogar inteligente. Filtra por categoría, marca y precio.">
   <meta name="theme-color" content="#10203b">
   <link rel="canonical" href="https://www.lucmar.com/catalogo.html">
   <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
   <div class="topbar">
     <div class="wrap">
       <span class="promo">🚚 Envío gratis en compras superiores a <strong>Bs&nbsp;350</strong></span>
-      <nav><a href="#ayuda">Ayuda</a><a href="#pedido">Seguimiento de pedido</a><a href="#contacto">Contáctanos</a></nav>
+      <nav><a href="ayuda.html">Ayuda</a><a href="pedido.html">Seguimiento de pedido</a><a href="contacto.html">Contáctanos</a></nav>
     </div>
   </div>
 
@@ -48,13 +48,17 @@
     </div>
     <nav class="catbar" aria-label="Categorías">
       <div class="wrap">
-        <a class="all" href="catalogo.html"><span data-icon="menu"></span> Todas las categorías</a>
+        <a class="all" href="catalogo.html"><span data-icon="menu"></span><span class="lbl-full">Todas las categorías</span><span class="lbl-short">Categorías</span></a>
+        <a class="brands" href="index.html#marcas"><span data-icon="tag"></span> Marcas</a>
         <a href="catalogo.html?cat=escritorio">Organización</a>
         <a href="catalogo.html?cat=ergonomia">Ergonomía</a>
-        <a href="catalogo.html?cat=papeleria">Papelería</a>
+        <a href="catalogo.html?cat=energia">Energía</a>
         <a href="catalogo.html?cat=iluminacion">Iluminación</a>
         <a href="catalogo.html?cat=tecnologia">Tecnología</a>
         <a href="catalogo.html?cat=almacenamiento">Almacenamiento</a>
+        <a href="catalogo.html?cat=audio-video">Audio y video</a>
+        <a href="catalogo.html?cat=redes">Redes</a>
+        <a href="catalogo.html?cat=domotica">Domótica</a>
         <a class="offers" href="catalogo.html">🔥 Ofertas</a>
       </div>
     </nav>
@@ -78,10 +82,14 @@
       <a href="catalogo.html">Todas las categorías <span data-icon="arrow"></span></a>
       <a href="catalogo.html?cat=escritorio">Organización de escritorio</a>
       <a href="catalogo.html?cat=ergonomia">Ergonomía y confort</a>
-      <a href="catalogo.html?cat=papeleria">Papelería y escritura</a>
+      <a href="catalogo.html?cat=energia">Energía y respaldo</a>
       <a href="catalogo.html?cat=iluminacion">Iluminación</a>
       <a href="catalogo.html?cat=tecnologia">Accesorios tecnológicos</a>
       <a href="catalogo.html?cat=almacenamiento">Almacenamiento</a>
+      <a href="catalogo.html?cat=audio-video">Audio y video</a>
+      <a href="catalogo.html?cat=redes">Redes y conectividad</a>
+      <a href="catalogo.html?cat=domotica">Domótica</a>
+      <a href="index.html#marcas">Marcas</a>
     </nav>
     <div class="drawer__foot">
       <a class="btn btn-wa btn-block" href="https://wa.me/59162185698" target="_blank" rel="noopener" data-wa><span data-icon="wa"></span> Escríbenos por WhatsApp</a>
@@ -106,6 +114,10 @@
         <div class="filter-block">
           <h4>Categoría</h4>
           <div id="filter-cats"></div>
+        </div>
+        <div class="filter-block">
+          <h4>Marca</h4>
+          <div id="filter-brands" class="filter-scroll"></div>
         </div>
         <div class="filter-block">
           <h4>Precio</h4>
