@@ -148,7 +148,7 @@ python -m http.server 8000
 
 ### 1. Número de WhatsApp
 ```js
-const LUCMAR = { whatsapp: "59162185698", ... }
+const LUCMAR = { whatsapp: "59177072715", ... }
 ```
 Formato internacional, solo dígitos (código de país + número, sin `+` ni espacios).
 

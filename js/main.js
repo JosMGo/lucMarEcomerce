@@ -31,6 +31,7 @@
     mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>',
     clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
     help: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>',
+    play: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>',
   };
 
   /* ---------- Utilidades ---------- */
@@ -56,6 +57,27 @@
     const src = uImgSafe(id, w);
     const ph = placeholder(alt).replace(/"/g, "&quot;");
     return `<img src="${src}" alt="${alt}" loading="lazy" decoding="async" ${cls ? `class="${cls}"` : ""} onerror="this.onerror=null;this.src='${ph}'">`;
+  }
+
+  // Media de una tarjeta de categoría: video en bucle si la categoría lo define,
+  // si no (o si el usuario pidió menos movimiento) la imagen de siempre.
+  // Sin "poster" a propósito: evita el parpadeo de una foto distinta antes del
+  // video. Aparece con fundido al tener datos (ver catVideoSetup).
+  function catMedia(c) {
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!c.video || reduced) return imgTag(c.img, c.name, 500);
+    return `<video src="${c.video}" data-img="${c.img}" aria-label="${escHtml(c.name)}"
+      autoplay muted loop playsinline preload="auto"></video>`;
+  }
+
+  // Fundido al cargar y respaldo a la imagen si el video falla (CDN caído, 403...).
+  function catVideoSetup(root) {
+    $$("video[data-img]", root).forEach((v) => {
+      v.addEventListener("loadeddata", () => v.classList.add("is-ready"));
+      v.addEventListener("error", () => {
+        v.outerHTML = imgTag(v.dataset.img, v.getAttribute("aria-label"), 500);
+      });
+    });
   }
 
   /* ---------- WhatsApp ---------- */
@@ -216,9 +238,12 @@
 
     // categorías
     const cg = $("#cats-grid");
-    if (cg) cg.innerHTML = CATEGORIES.map((c) =>
-      `<a class="cat-card" href="catalogo.html?cat=${c.slug}">${imgTag(c.img, c.name, 500)}<span>${c.name}</span></a>`
-    ).join("");
+    if (cg) {
+      cg.innerHTML = CATEGORIES.map((c) =>
+        `<a class="cat-card" href="catalogo.html?cat=${c.slug}">${catMedia(c)}<span>${c.name}</span></a>`
+      ).join("");
+      catVideoSetup(cg);
+    }
 
     // marcas (las que ya tienen productos primero; las demás quedan "Próximamente")
     const bg = $("#brands-grid");
@@ -243,9 +268,9 @@
       fg.innerHTML = feat.map(productCard).join("");
     }
 
-    // ofertas (con oldPrice)
-    const og = $("#offers-grid");
-    if (og) og.innerHTML = PRODUCTS.filter((p) => p.oldPrice).slice(0, 4).map(productCard).join("");
+    // novedades (productos con badge "Nuevo")
+    const ng = $("#novedades-grid");
+    if (ng) ng.innerHTML = PRODUCTS.filter((p) => p.badge === "Nuevo").slice(-8).map(productCard).join("");
 
     initCarousel();
     bindWaToast();
@@ -323,7 +348,7 @@
     }
 
     // encabezados de sección
-    ["cats", "brands", "featured", "offers"].forEach(sectionHead);
+    ["cats", "brands", "featured", "news"].forEach(sectionHead);
 
     // banner promocional
     const pb = $("#promo-banner"), pr = HOME.promo;
@@ -520,6 +545,10 @@
         <div class="pdp-gallery__main" id="pdp-main">${imgTag(gallery[0], p.name, 900)}</div>
         <div class="pdp-thumbs" id="pdp-thumbs">
           ${gallery.map((g, k) => `<button class="${k === 0 ? "active" : ""}" data-full="${uImgSafe(g, 900)}" aria-label="Vista ${k + 1}">${imgTag(g, p.name, 160)}</button>`).join("")}
+          ${p.youtube ? `<button class="is-video" data-yt="${p.youtube}" aria-label="Reproducir video">
+            <img src="https://i.ytimg.com/vi/${p.youtube}/default.jpg" alt="Video de ${p.name}" loading="lazy">
+            <span class="pdp-thumb-play">${ICON.play}</span>
+          </button>` : ""}
         </div>
       </div>
       <div class="pdp-info">
@@ -562,12 +591,20 @@
         </div>
       </div>`;
 
-    // galería: cambiar principal
-    const mainImg = $("#pdp-main img");
+    // galería: cambiar imagen/video principal
+    const mainBox = $("#pdp-main");
     $$("#pdp-thumbs button").forEach((b) => b.addEventListener("click", () => {
       $$("#pdp-thumbs button").forEach((x) => x.classList.remove("active"));
       b.classList.add("active");
-      mainImg.src = b.dataset.full;
+      if (b.dataset.yt) {
+        // video de YouTube: el iframe solo se crea al hacer clic (evita cargar YouTube de entrada)
+        mainBox.innerHTML = `<iframe src="https://www.youtube.com/embed/${b.dataset.yt}?autoplay=1"
+          title="Video de ${p.name}" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>`;
+      } else {
+        mainBox.innerHTML = `<img src="${b.dataset.full}" alt="${p.name}" loading="lazy">`;
+      }
     }));
 
     // relacionados
