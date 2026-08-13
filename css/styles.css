@@ -172,6 +172,7 @@ p { margin: 0; }
 .brand__name { font-family: var(--font-display); font-weight: 800; font-size: 1.32rem; letter-spacing: -.03em; color: var(--navy-800); line-height: 1; }
 .brand__name span { color: var(--amber-600); }
 .brand__tag { font-size: .68rem; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
+@media (max-width: 860px) { .brand__tag { display: none; } }
 
 .searchbar { flex: 1; display: flex; align-items: center; max-width: 560px; background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: .3rem .3rem .3rem 1rem; transition: border-color .2s, box-shadow .2s; }
 .searchbar:focus-within { border-color: var(--navy-500); box-shadow: 0 0 0 4px rgba(31,66,114,.1); background: #fff; }
@@ -366,12 +367,21 @@ a.offers { display: none !important; }
    ========================================================================== */
 .brands-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 18vw, 180px), 1fr)); gap: clamp(.7rem, 1.4vw, 1rem); }
 .brand-tile {
+  position: relative; overflow: hidden;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .35rem;
   min-height: 170px; padding: 1rem .35rem; text-align: center;
   background: #fff; border: 1.5px solid var(--line); border-radius: var(--r-lg);
   box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
 }
 .brand-tile img { width: 100%; max-width: none; height: clamp(80px, 11vw, 120px); object-fit: contain; }
+/* Logo secundario de fondo (distribuidora): atenuado y detrás de todo. La
+   doble clase gana en especificidad a la regla genérica .brand-tile img. */
+.brand-tile .brand-tile__wm {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%; max-width: none; object-fit: contain;
+  opacity: .15; pointer-events: none; user-select: none;
+}
+.brand-tile > :not(.brand-tile__wm) { position: relative; z-index: 1; }
 .brand-tile__word { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; letter-spacing: -.02em; color: var(--navy-800); line-height: 1.1; }
 .brand-tile__tag { font-size: .74rem; color: var(--muted); line-height: 1.25; }
 .brand-tile__n { font-size: .72rem; font-weight: 700; color: var(--amber-600); text-transform: uppercase; letter-spacing: .04em; }

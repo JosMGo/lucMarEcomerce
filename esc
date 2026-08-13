@@ -1,0 +1,23 @@
+[33mcommit d27f1a4c2756b88e0d9bffe58236b13f6ce1e5a4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: JosMGo <josemilton2121@gmail.com>
+Date:   Sat Aug 8 11:25:04 2026 -0400
+
+    novedades,productos,videos
+
+[33mcommit 85afa1ba8e0c8bd709c2253f5762e45a1249bd58[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: JosMGo <josemilton2121@gmail.com>
+Date:   Fri Jul 24 16:11:17 2026 -0400
+
+    Cambio Marcas y productos Ugreen
+
+[33mcommit effe14c62cd6a4cae4ba8669fbf4924525d0abc8[m
+Author: JosMGo <josemilton2121@gmail.com>
+Date:   Thu Jul 23 09:54:07 2026 -0400
+
+    Agregar .gitignore, análisis escalabilidad e imágenes
+
+[33mcommit 05977a999fc6da2d6ff22b9a6262ff60dc9056a3[m
+Author: JosMGo <josemilton2121@gmail.com>
+Date:   Tue Jul 21 11:38:45 2026 -0400
+
+    Primer commit

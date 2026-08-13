@@ -4,6 +4,7 @@ admin.html
 # Archivos de sistema
 .DS_Store
 Thumbs.db
+desktop.ini
 *.swp
 *.swo
 

@@ -120,11 +120,17 @@
   const brandName = (slug) => (brandOf(slug) || {}).name || "";
   const brandCount = (slug) => PRODUCTS.filter((p) => p.brand === slug).length;
 
-  /* Logotipo de marca: imagen si existe, si no el nombre en tipografía */
+  /* Logotipo de marca: imagen si existe, si no el nombre en tipografía.
+     Si la marca trae "watermark", se pinta atenuado de fondo en el cuadro
+     (decorativo: sin alt y oculto a lectores de pantalla). */
   function brandMark(b) {
-    return b.logo
+    const wm = b.watermark
+      ? `<img class="brand-tile__wm" src="${b.watermark}" alt="" aria-hidden="true" loading="lazy" decoding="async">`
+      : "";
+    const mark = b.logo
       ? `<img src="${b.logo}" alt="${b.name}" loading="lazy" decoding="async">`
       : `<span class="brand-tile__word">${b.name}</span>`;
+    return wm + mark;
   }
 
   /* ---------- Estrellas ---------- */
@@ -533,7 +539,7 @@
 
     // breadcrumbs
     $("#pdp-breadcrumbs").innerHTML =
-      `<a href="index.html">Inicio</a><span class="sep">/</span>
+      `<a href="/">Inicio</a><span class="sep">/</span>
        <a href="catalogo.html?cat=${p.cat}">${catName(p.cat)}</a><span class="sep">/</span>
        <span>${p.name}</span>`;
 
@@ -619,14 +625,36 @@
       rel.innerHTML = [...list, ...fill].map(productCard).join("");
     }
 
+    // URL canónica + Open Graph dinámicos (para buscadores y redes)
+    const SITE = "https://www.lucmar.net/";
+    const canonUrl = `${SITE}producto.html?id=${encodeURIComponent(p.id)}`;
+    const imgUrl900 = uImgSafe(p.img, 900);
+    const setMeta = (sel, attr, val) => {
+      let el = document.head.querySelector(sel);
+      if (!el) { el = document.createElement("meta"); const [k, v] = sel.replace(/[[\]"]/g, "").split("="); el.setAttribute(k, v); document.head.appendChild(el); }
+      el.setAttribute(attr, val);
+    };
+    let canon = document.head.querySelector('link[rel="canonical"]');
+    if (!canon) { canon = document.createElement("link"); canon.rel = "canonical"; document.head.appendChild(canon); }
+    canon.href = canonUrl;
+    setMeta('meta[property="og:title"]', "content", `${p.name} — Lucmar`);
+    setMeta('meta[property="og:description"]', "content", p.desc.slice(0, 200));
+    setMeta('meta[property="og:image"]', "content", imgUrl900);
+    setMeta('meta[property="og:url"]', "content", canonUrl);
+
     // JSON-LD dinámico del producto
     const ld = {
       "@context": "https://schema.org", "@type": "Product", name: p.name, description: p.desc,
-      image: uImgSafe(p.img, 900), brand: { "@type": "Brand", name: brandName(p.brand) || "Lucmar" },
-      seller: { "@type": "Organization", name: "Lucmar" },
-      aggregateRating: { "@type": "AggregateRating", ratingValue: p.rating, reviewCount: p.reviews },
-      offers: { "@type": "Offer", price: p.price, priceCurrency: "BOB", availability: "https://schema.org/InStock" },
+      image: imgUrl900, brand: { "@type": "Brand", name: brandName(p.brand) || "Lucmar" },
+      ...(p.sku ? { sku: p.sku } : {}),
+      offers: {
+        "@type": "Offer", price: p.price, priceCurrency: "BOB", url: canonUrl,
+        availability: agotado(p) ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
+        seller: { "@type": "Organization", name: "Lucmar" },
+      },
     };
+    // aggregateRating solo si hay reseñas reales (Google rechaza reviewCount 0)
+    if (p.reviews > 0) ld.aggregateRating = { "@type": "AggregateRating", ratingValue: p.rating, reviewCount: p.reviews };
     const s = document.createElement("script"); s.type = "application/ld+json"; s.textContent = JSON.stringify(ld);
     document.head.appendChild(s);
 

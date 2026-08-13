@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.pen.dev)",
+      "WebSearch",
+      "WebFetch(domain:docs.pencil.dev)"
+    ]
+  }
+}

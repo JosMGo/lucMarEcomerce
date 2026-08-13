@@ -193,7 +193,7 @@ En `css/styles.css`, sección `:root`: `--navy-*` (color principal) y `--amber-*
 ## SEO incluido
 - Etiquetas `title`, `description`, Open Graph y canónicas en cada página.
 - Datos estructurados (JSON-LD) de tienda y de producto.
-- `sitemap.xml` y `robots.txt` → cambia `https://www.lucmar.com/` por tu dominio real.
+- `sitemap.xml` y `robots.txt` → cambia `https://www.lucmar.net/` por tu dominio real.
 - Imágenes con `alt`, carga diferida (`lazy`) y formato optimizado.
 
 ## Accesibilidad y rendimiento

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 
-Sitemap: https://www.lucmar.com/sitemap.xml
+Sitemap: https://www.lucmar.net/sitemap.xml

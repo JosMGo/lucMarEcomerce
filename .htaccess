@@ -1,0 +1,66 @@
+# ==========================================================================
+#  Lucmar — configuración de Apache para Hostinger
+#  Seguridad, HTTPS, compresión y caché para un sitio estático.
+# ==========================================================================
+
+# ---- 1. Forzar HTTPS (redirige http -> https) ----
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# ---- 2. Forzar www (lucmar.net -> www.lucmar.net) ----
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# ---- 2b. Ocultar index.html en la URL (index.html -> raíz "/") ----
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html[\ ?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# ---- 3. Desactivar el listado de directorios ----
+Options -Indexes
+
+# ---- 4. Proteger el panel de administración ----
+# Si subes admin.html, descomenta y crea el archivo .htpasswd (ver instrucciones).
+# <Files "admin.html">
+#   AuthType Basic
+#   AuthName "Acceso restringido"
+#   AuthUserFile /home/USUARIO/.htpasswd
+#   Require valid-user
+# </Files>
+
+# ---- 5. Bloquear acceso a archivos sensibles ----
+<FilesMatch "(^\.|\.(md|ini|log|bak|git|htaccess|htpasswd)$)">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.git
+
+# ---- 6. Cabeceras de seguridad ----
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+  # CSP: permite las fuentes/imágenes externas que ya usa el sitio.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube.com; connect-src 'self'; object-src 'none'; base-uri 'self'"
+</IfModule>
+
+# ---- 7. Compresión GZIP ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml application/xml
+</IfModule>
+
+# ---- 8. Caché del navegador ----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType text/html "access plus 1 day"
+</IfModule>
+
+# ---- 9. Páginas de error (opcional) ----
+# ErrorDocument 404 /index.html
