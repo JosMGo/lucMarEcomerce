@@ -3,7 +3,10 @@
     "allow": [
       "WebFetch(domain:www.pen.dev)",
       "WebSearch",
-      "WebFetch(domain:docs.pencil.dev)"
+      "WebFetch(domain:docs.pencil.dev)",
+      "Bash(node -e ' *)",
+      "Bash(grep -n \"/\\\\*\\\\|\\\\*/\" js/products.js)",
+      "Bash(grep -c \"^\\\\s*//.*id:\" js/products.js)"
     ]
   }
 }

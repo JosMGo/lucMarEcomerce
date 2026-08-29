@@ -85,7 +85,7 @@ body {
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
-button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; padding: 0; }
 input, select { font: inherit; }
 ul { margin: 0; padding: 0; list-style: none; }
 h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.08; margin: 0; font-weight: 700; letter-spacing: -0.02em; }
@@ -422,11 +422,6 @@ a.brand-tile:hover { transform: translateY(-4px); box-shadow: var(--shadow); bor
   font-size: .72rem; font-weight: 800; padding: .28rem .55rem; border-radius: 999px; letter-spacing: .02em;
 }
 .product-card__badge.new { background: var(--navy-700); }
-/* descuentos ocultos temporalmente en el frontend (se retomará más adelante) */
-.product-card__badge:not(.new),
-.product-card__price .was,
-.pdp-price .was,
-.pdp-price .off { display: none !important; }
 
 /* ---------- Producto agotado ---------- */
 /* la foto se atenúa y una cinta la cruza: se distingue de un vistazo en la cuadrícula */

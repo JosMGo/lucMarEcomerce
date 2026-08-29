@@ -26,7 +26,7 @@ const CATEGORIES = [
     video: "video/ergonomiadt3.mp4" },
   { slug: "energia",        name: "Energía y respaldo",         img: "1621905251189-08b45d6a269e",
     video: "video/ups.mp4" },
-  { slug: "iluminacion",    name: "Iluminación de oficina",     img: "1507003211169-0a1dd7228f2d",
+  { slug: "iluminacion",    name: "Iluminación y herramientas", img: "1507003211169-0a1dd7228f2d",
     video: "video/iluminacion.mp4"
    },
   { slug: "tecnologia",     name: "Accesorios tecnológicos",    img: "1517336714731-489689fd1ca8",
@@ -83,6 +83,20 @@ function uImg(id, w = 900) {
    la parte que va después de "watch?v=" en la URL de YouTube), la ficha de
    producto muestra un video embebido (con carga diferida) debajo de la galería. */
 const PRODUCTS = [
+  
+  /* ---- DT3 · Sillas y ergonomía ---- */
+  {
+    id: "silla-de-oficina-vita-dt3-gris-oscuro",
+    name: "SILLA DE OFICINA VITA DT3 GRIS OSCURO",
+    sku: "13906-9",
+    cat: "ergonomia", brand: "dt3",
+    price: 1517, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/dt3-silla-de-oficina-negro.png",
+    gallery: ["img/productos/dt3-silla-de-oficina-negro.png"],
+    desc: "SILLA DE OFICINA VITA DT3 GRIS OSCURO*REVESTIMIENTO DE MALLA SPANDEX EN EL RESPALDAR*REVESTIMIENTO TEJIDO SOFTEX EN ASIENTO Y REPOSA BRAZOS*APOYO LUMBAR",
+    features: [],
+  },
+  
   /* {
     id: "organizador-modular-roble",
     name: "Organizador modular de escritorio en roble",
@@ -153,6 +167,20 @@ const PRODUCTS = [
     desc: "Orden que se ve bien. Cajas plegables de tela con etiqueta frontal y asas reforzadas para documentos, cables o material de oficina.",
     features: ["Tela resistente lavable", "Estructura plegable", "Etiqueta frontal", "Asas reforzadas", "Pack de 2 unidades"],
   }, */
+
+  /* ---- AMAZON · Alexa y hogar inteligente ---- */
+   {
+    id: "amazon-alexa-echo-spot-2024-negro",
+    name: "AMAZON ALEXA ECHO SPOT 2024 NEGRO",
+    sku: "BV84J9-N",
+    cat: "tecnologia", brand: "amazon",
+    price: 2140, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/BV84J9N.webp",
+    gallery: ["img/productos/BV84J9N.webp"],
+    desc: "AMAZON ALEXA ECHO SPOT 2024 NEGRO*SONIDO VIBRANTE CON PARLANTE DE PROYECCION FRONTAL DE 1,73\"*PANTALLA 2,83\" 320X240*MANOS LIBRES*DETECCION DE MOV*3 BOTONES",
+    features: ["-Amazon Echo Spot (BV84J9) – Tu despertador inteligente con personalidad", "-Convierte cada mañana en algo memorable. El nuevo Echo Spot sintetiza la función de reloj despertador con la inteligencia y comodidad de Alexa en un diseño compacto y elegante.", "Sonido envolvente de gran calidad: Sorprende con voces claras, bajos profundos y potencia para llenar tu habitación con música, podcasts o audiolibros.", "Despertar inteligente y personalizado: Programa tu rutina matutina— despiértate con tu playlist favorita o sonidos suaves, revisa el clima o tus recordatorios, todo al ritmo que elijas.", "-Control por voz integrado: Ajusta luces, termostato, reproduce música, contesta preguntas o configura alarmas sin tocar nada— Alexa lo hace por ti.", "-Privacidad consciente: Micrófono desactivable y controles en app para blindar tus datos—es tu voz, solo tu voz.", "-Compromiso con el planeta: Construido con hasta 36 % de materiales reciclados, pensando en tu hogar y en el planeta que compartimos."],
+  },
+
   /* {
     id: "teclado-mecanico-silencioso",
     name: "Teclado mecánico silencioso inalámbrico",
@@ -291,6 +319,19 @@ const PRODUCTS = [
   },
 
   // ---- BOYA · Micrófonos y grabación ---- (marca comentada / próximamente)
+
+  {
+    id: "mini-microfono-inalambrico-usb-c",
+    name: "MINI MICROFONO INALAMBRICO USB-C",
+    sku: "BOYA mini 2-02",
+    cat: "audio-video", brand: "boya",
+    price: 950, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/BOYAMINI202-image.webp",
+    gallery: ["img/productos/BOYAMINI202-image.webp"],
+    desc: "MINI MICROFONO INALAMBRICO DUAL*USB-C*PESO 5g ULTRA LIGERO*NC CON IA*AUDIO PROFESIONAL*ALTA TOLERANCIA SONORA 120dB SPL*SAFE TRACK*ALCANCE 100M*6H BATERIA",
+    features: ["🌟 Ventajas que marcan la diferencia", "🎯 Ultraligero y discreto", "Solo 5 g de peso y tamaño tipo pulgar para grabaciones cómodas y casi invisibles.", "🧠 Cancelación de ruido con IA", "Chip neuronal profundo que reduce hasta –40 dB de ruido, manteniendo tu voz clara en cualquier entorno.", "🎧 Calidad de audio profesional", "Grabación en 48 kHz / 24-bit con 80 dB SNR para un sonido rico, limpio y natural.", "🔊 Alta tolerancia sonora", "Soporta hasta 120 dB SPL, ideal para voces fuertes sin distorsión.", "🛡️ Safety Track integrado", "Protección inteligente con pista de seguridad –12 dB para evitar saturaciones.", "📡 Transmisión estable de largo alcance", "Hasta 100 metros sin obstáculos para grabar con libertad.", "🔋 Autonomía extendida", "• ⏱️ 6 horas por transmisor", "• ⚡ Hasta 30 horas con el estuche de carga", "👀 Monitoreo en tiempo real", "Control total de tu audio mientras grabas."],
+  },
+
   /* {
     id: "boya-microfono-solapa-dual",
     name: "Micrófono de solapa inalámbrico dual",
@@ -356,7 +397,36 @@ const PRODUCTS = [
     features: ["100 pulgadas en 16:9", "Tela mate antirreflejo", "Se pliega sin marcas", "Ganchos y cuerdas incluidos", "Bolsa de transporte"],
   }, */
 
+
+  // kingson  -----Mochilas y organización
+  {
+    id: "mochila-ultraligera-16l-de-15-6",
+    name: "MOCHILA ULTRALIGERA 16L DE 15,6\"",
+    sku: "KS3207-DGREY",
+    cat: "escritorio", brand: "kingsons",
+    price: 415, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/KS3207-DGREY_104068.webp",
+    gallery: ["img/productos/KS3207-DGREY_104068.webp"],
+    desc: "MOCHILA ULTRALIGERA 16L DE 15,6\"*PESO 0,66Kg*APERTURA CLAMSHELL 180°*CREMALLERA OCULTA*CORREA PARA MALETA*LAPTOPS 15,6\"/TABLETS 11\"RESISTENTE AL AGUA Y ARAÑASOS",
+    features: ["CARACTERÍSTICAS DESTACADAS", "Diseño Ultra Ligero (Ultra Lightweight Design): Máxima portabilidad sin esfuerzo. Con un peso de solo 0.66 kg, reduce la fatiga en los hombros, haciéndola ideal para el uso diario intensivo o aventuras de viaje.", "Apertura Tipo Clamshell de 180°: Se abre completamente plana como una maleta. Facilita un empaque rápido, eficiente y brinda un acceso inmediato a todas tus pertenencias sin necesidad de rebuscar en el fondo.", "Seguridad Antirrobo con Cremallera Oculta: Viaja con total tranquilidad en el transporte público. El sistema de cremalleras ocultas previene aperturas no autorizadas, manteniendo tus objetos de valor 100% seguros.", "Compartimento Tecnológico Dual Dedicado: Espacio óptimo y ultra-protegido que aloja simultáneamente una computadora portátil de hasta 15.6 pulgadas y una tableta de hasta 11 pulgadas.", "Conexión y Energía en Movimiento: Incorpora un puerto de carga USB externo para conectar tus dispositivos fácilmente sobre la marcha, manteniéndote siempre conectado (requiere powerbank interna).", "Material de Alta Durabilidad y Resistencia: Confeccionada en poliéster premium de alta densidad, resistente a los arañazos y repelente al agua, garantizando una protección prolongada contra el desgaste y el clima.", "Ergonomía Superior y Confort Premium: Panel trasero ergonómico con acolchado transpirable que brinda soporte estructural, comodidad absoluta y ventilación continua para evitar la sudoración durante todo el día.", "Correa para Equipaje (Luggage Strap): Se acopla de manera cómoda y firme a las asas del equipaje de mano rodante, permitiendo un tránsito fluido y sin esfuerzo por aeropuertos y estaciones.", "ESPECIFICACIONES TÉCNICAS", "Modelo: KS3207", "Dimensiones: 29 x 15 x 45 cm", "Capacidad Volumen: 16 Litros", "Compatibilidad Laptop: Hasta 15.6 pulgadas (más compartimento para tablet de 11\")", "Material Exterior: Poliéster premium resistente al agua y rayaduras", "Peso Neto: 0.66 kg (Ultra liviana)", "Organización Interna: Múltiples compartimentos organizadores internos", "IDEAL PARA:", "Profesionales y Ejecutivos Urbanos: Perfecta para el traslado diario a la oficina manteniendo un perfil corporativo, estético y moderno.", "Estudiantes Universitarios: Espacio y protección ideal para transportar laptops, tablets, apuntes y gadgets de forma segura.", "Viajeros Frecuentes y Nómadas Digitales: Gracias a su correa de equipaje, tamaño compacto de cabina y apertura plana, agiliza los controles de seguridad en aeropuertos."],
+  },
+  
+  
+  
   // ---- TP-LINK · Redes y wifi ---- (marca comentada / próximamente)
+
+  {
+    id: "adaptador-bluetooth-5-0-usb",
+    name: "ADAPTADOR BLUETOOTH 5,0 USB",
+    sku: "UB500",
+    cat: "redes", brand: "tp-link",
+    price: 160, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/UB500-image-0.webp",
+    gallery: ["img/productos/UB500-image-0.webp"],
+    desc: "ADAPTADOR NANO USB BLUETOOTH 5.0*SOPORTA WINDONWS 10/8.1/8/7/XP*PlUG AND PLAY PARA WIN 8-WIN 8.1*PARA WIN11*",
+    features: ["Nano Adaptador USB Bluetooth 5.4", "Bluetooth 5.4 — Seguridad y fiabilidad mejoradas respecto a la generación anterior de Bluetooth.", "Conectividad Inalámbrica – Ofrece una comunicación estable y cómoda entre tus dispositivos Bluetooth y tu PC o portátil.", "Tamaño Nano – Ultrapequeño para una portabilidad conveniente con un rendimiento fiable y de alta calidad.", "Sistemas Operativos Compatibles – Windows 11/10/8.1/7."],
+  },
+  
   /* {
     id: "tp-link-router-wifi6",
     name: "Router WiFi 6 de doble banda AX1500",
@@ -379,6 +449,18 @@ const PRODUCTS = [
   }, */
 
   // ---- ELSYS · Electrónica y señal ---- (marca comentada / próximamente)
+
+  {
+    id: "amplimax-modem-4g-eprl15-receptor-ampl",
+    name: "AMPLIMAX MODEM 4G EPRL15 RECEPTOR/AMPL",
+    cat: "redes", brand: "elsys",
+    price: 2336, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AMPLIMAXMODEM4G.webp",
+    gallery: ["img/productos/AMPLIMAXMODEM4G.webp"],
+    desc: "AMPLIMAX MODEM 4G EPRL15*RECEPTOR/AMPLIFICADOR DE SEÑAL 6 VECES MAS*RESISTENTE AL AGUA/CALOR/POLVO* 1 SLOT PARA SIM*BANDAS 700/850/900/1700/1800/1900/2100/ 2600",
+    features: [],
+  },
+
   /* {
     id: "elsys-amplificador-4g",
     name: "Amplificador de señal celular 4G para oficina",
@@ -399,6 +481,45 @@ const PRODUCTS = [
     desc: "Conecta el depósito o el patio a la red de la oficina. Carcasa resistente a la lluvia y al sol, pensada para quedarse fuera todo el año.",
     features: ["Resistencia a la intemperie IP65", "Alcance de hasta 500 m", "Soporte de montaje incluido", "Alimentación por cable de red", "Doble polarización"],
   }, */
+
+  // ---- NETCAD · Almacenamiento y memorias ----
+  {
+    id: "n535s-2-5-sataiii-3d-nand-ssd-480gb",
+    name: "N535S 2.5 SATAIII 3D NAND SSD 480GB",
+    sku: "NT01N535S-480G-S3X",
+    cat: "almacenamiento", brand: "netac",
+    price: 2160, oldPrice: null, rating: 4.6, reviews: 0, badge: "Nuevo",
+    img: "img/productos/NT01N535S481714080308288.webp",
+    gallery: ["img/productos/NT01N535S481714080308288.webp"],
+    desc: "Netac N535S 2.5 SATAIII 3D NAND SSD 480GB, R/W up to 540/490MB/s",
+    features: ["Brand\tNetac", "Model\tN535S", "Transmission Protocol\tSATA 6Gb/s", "Capacity\t120GB/240GB/480GB/960GB", "Weight\tAbout 54g", "Dimension\t100mm*70mm*7mm", "Flash\t3D TLC", "S.M.A.R.T\tSupport", "TRIM\tSupport", "Voltage\t5V", "Storage Temperature\t-40°C〜85°C", "Operation Temperature\t0〜70°C", "Environmental humidity (no condensation)\t5%-95%"],
+  },
+
+  //MAONO  ----Micrófonos y streaming
+  {
+    id: "microfono-inalambrico-de-escritorio-rgb",
+    name: "MICROFONO INALAMBRICO DE ESCRITORIO RGB",
+    sku: "DM40 PRO",
+    cat: "audio-video", brand: "maono",
+    price: 996, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/DM40PRO-image-0-1757540564977.webp",
+    gallery: ["img/productos/DM40PRO-image-0-1757540564977.webp"],
+    desc: "MICROFONO INALAMBRICO DE ESCRITORIO RGB*CAMBIO DE VOZ CON IA*BATERIA DE LARGA DURACION 75HR*CANCELACION DE 1 SOLO TOQUE*MAONO LINK*PLUG AND PLAY",
+    features: ["Conectividad Inalámbrica Avanzada: Disfruta de una experiencia sin cables con una conexión estable y de baja latencia, perfecta para transmisiones en vivo y grabaciones.", "Calidad de Sonido Profesional: Cápsula de condensador de 16 mm con una frecuencia de muestreo de 48 kHz / 24 bit, capturando detalles nítidos y naturales en tu voz.", "Cancelación de Ruido Inteligente: Cuatro niveles de cancelación de ruido (bajo, medio, alto y personalizado) para asegurar una grabación clara en cualquier entorno.", "Efectos de Voz con IA: Transforma tu voz con 10 modos de cambio de voz impulsados por inteligencia artificial, ideales para agregar creatividad a tus transmisiones.", "Iluminación RGB Personalizable: Más de 16 millones de colores para personalizar la estética de tu espacio de trabajo o estudio.", "Controles Intuitivos: Ajustes de ganancia, volumen, silencio con un solo toque y monitoreo en tiempo real para un control total durante la grabación.", "Conectividad Universal: Compatible con USB y USB-C, funcionando con PC, Mac, smartphones y consolas de juegos como PS4 y PS5.", "Batería de Larga Duración: Hasta 75 horas de uso continuo sin RGB o 40 horas con iluminación activa, asegurando sesiones largas sin interrupciones.", "Contenido del Paquete", "Micrófono MAONO DM40 Pro con soporte de escritorio", "Montura antichoque y filtro pop", "Conector USB-C y adaptador USB-A", "Cable 2 en 1 para carga y audio (3.3 ft)", "Manual del usuario", "Con el MAONO DM40 Pro, obtienes un micrófono que combina tecnología avanzada, diseño elegante y facilidad de uso, todo a un precio accesible. Ideal para quienes buscan mejorar la calidad de sus grabaciones sin complicaciones."],
+  },
+
+  //TAPO  ----Cámaras y videollamadas
+  {
+    id: "camara-wifi-tapo-c200",
+    name: "CAMARA WIFI TAPO C200",
+    sku: "TAPO C200",
+    cat: "redes", brand: "tapo",
+    price: 540, oldPrice: null, rating: 4.6, reviews: 0, badge: "Nuevo",
+    img: "img/productos/TAPOC200-image-4-9-33-51.webp",
+    gallery: ["img/productos/TAPOC200-image-4-9-33-51.webp"],
+    desc: "CAMARA WIFI TAPO C200*ROTACION 360°*FULL HD 1080P*2 VIAS DE AUDIO*VISION NOCTURNA*DETECCION DE MOVIMIENTO*MODO PROVACIDAD*ALMACENAMIENTO MICRO SD 128GB",
+    features: [],
+  },
 
   /* ---- SHELLY · Automatización del hogar ---- */
   {
@@ -688,6 +809,32 @@ const PRODUCTS = [
     desc: "Convierte la luz solar en energía confiable con sus células monocristalinas de alta eficiencia y conexión 6-en-1 para todos tus dispositivos.",
     features: [],
   },
+
+  // ---- TOTTO · Mochilas y accesorios escolares ----
+  {
+    id: "pack-x-2-mochila-estuche-kalex",
+    name: "Pack X 2 Mochila + Estuche Kalex",
+    sku: "MA04COM093-22100-N01",
+    cat: "escritorio", brand: "totto",
+    price: 270, oldPrice: 539, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MA04COM093-22100-N01_1.webp",
+    gallery: ["img/productos/MA04COM093-22100-N01_1.webp"],
+    desc: "La mochila Escolar Pack X 2 + Multiuso Kalex es perfecto para estudiantes. Incluye un Mochila pequeño y un multiuso, ambos con organizador sencillo y compartimento principal de doble deslizador. Ligero y funcional, ideal como maleta para el colegio.",
+    features: [],
+  },
+
+   {
+    id: "bolso-para-mujer-bombo-tipo-crossbody-azul",
+    name: "Bolso para Mujer Bombo tipo Crossbody Azul",
+    sku: "MA02IND748-26100-Z9G",
+    cat: "escritorio", brand: "totto",
+    price: 279, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MA02IND748-26100-Z9G_1.webp",
+    gallery: ["img/productos/MA02IND748-26100-Z9G_1.webp"],
+    desc: "¡Lleva lo esencial con estilo! El bolso Bombo tipo crossbody está fabricado con materiales de alta calidad como poliester liviana, lo que lo hace perfecto para el uso diario. Su diseño compacto incluye doble compartimento para organizar tus cosas y una correa ajustable para mayor comodidad. Ideal para quienes buscan practicidad sin sacrificar el estilo. ¡Hazlo tu accesorio favorito!",
+    features: [],
+  },
+  
 
   // ---- ENERSAFE · UPS y protección eléctrica ---- (marca comentada / próximamente)
 
@@ -1203,6 +1350,18 @@ const PRODUCTS = [
     features: ["Capacidad de volumen: 1,1 L", "Tiempo de conservación de la bebida fría: 8 horas.", "¿Cuánto tiempo se mantendrá caliente la bebida?: 8 horas.", "Material: acero inoxidable 304.", "Incluye tapa.", "Tiene asa.", "Alto 28.2 cm, x 9.2 diametro", "Acero inoxidable 304"],
   },
 
+  {
+    id: "vaso-tupperware-big-t-630-ml-celeste",
+    name: "Vaso Tupperware Big T 630 ml  celeste",
+    cat: "escritorio", brand: "tupperware",
+    price: 560, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/BIGT630.jpg",
+    gallery: ["img/productos/BIGT630.jpg"],
+    desc: "Ya sea en el auto, la oficina o la cafetería, nuestro nuevo Vaso big T de Tupperware® estará a tu lado, siempre lleno. Porque, entre menos veces lo tengas que rellenar, tendrás más espacio para la diversión.",
+    features: ["A prueba de derrames*: Su tapa con cierre abatible mantiene tu bebida donde debe estar: en tu vaso.", "Popote o boquilla: Puedes usarlo para beber como quieras, ya que cuenta con dos aberturas: una para usarlo con popote/pajilla y otra que funciona como boquilla.", "Bebidas frías o calientes: Nuestro diseño de doble pared funciona para mantener tu bebida tanto caliente hasta por 2 horas como fría hasta por 11 horas o incluso helada hasta 28 horas)**.", "Acabado protector: Ya que cuenta con un recubrimiento de polvo que evita las raspaduras, el Vaso big T siempre estará listo para que le tomes fotos todos los días desde que lo compres.", "Compatible con le portavasos: Cuenta con una base más pequeña que encaja fácilmente en la mayoría de los portavasos, lo cual convierte al big T en tu copiloto ideal."],
+  },
+
+  
 ];
 
 /* ==========================================================================

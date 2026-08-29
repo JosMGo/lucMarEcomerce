@@ -22,6 +22,7 @@
     shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg>',
     medal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.2 13.9 7 22l5-3 5 3-1.2-8.1"/></svg>',
     chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+    share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>',
     filter: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.5V19l4 2v-8.5z"/></svg>',
     box: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>',
     ret: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>',
@@ -94,8 +95,45 @@
   // Código interno del producto (campo "sku" en products.js). Es opcional.
   const skuLine = (p) => (p.sku ? `🔖 Código: ${p.sku}\n` : "");
 
+  /* ---------- Descuento ----------
+     La etiqueta se calcula sola a partir de oldPrice y price, los dos en Bs.
+     Así nunca puede contradecir al precio: no hay un texto que actualizar a
+     mano cuando cambia una cifra. Devuelve null si el producto no está rebajado. */
+  const ahorroBs = (p) =>
+    p.oldPrice && p.oldPrice > p.price ? p.oldPrice - p.price : null;
+  // En la etiqueta la moneda va al final ("-269 Bs"): con el signo menos delante,
+  // el formato normal de precio ("-Bs 269") se lee mal y ocupa más.
+  const descuentoLabel = (p) => {
+    const a = ahorroBs(p);
+    return a === null ? null : `-${a.toLocaleString("es-BO")} ${LUCMAR.currency}`;
+  };
+
+  // Enlace público del producto, para compartir o para citarlo en un mensaje.
+  const productUrl = (p) =>
+    `${location.origin}${location.pathname.replace(/[^/]*$/, "")}producto.html?id=${p.id}`;
+
+  /* ---------- Compartir el producto con un amigo ----------
+     Ojo: aquí NO se usa waLink(), que apunta al WhatsApp de Lucmar. Un enlace
+     wa.me sin número abre la lista de contactos para que la persona elija a
+     quién enviárselo.                                                        */
+  // Sin el enlace: navigator.share ya lo manda aparte en su campo "url" y, si se
+  // repitiera aquí, varias apps lo pegan dos veces en el mensaje.
+  function shareText(p) {
+    const a = ahorroBs(p);
+    return (
+      (a ? `Mira esta oferta en ${LUCMAR.brand} 🔥\n\n` : `Mira este producto de ${LUCMAR.brand} 👀\n\n`) +
+      `*${p.name}*\n` +
+      (a ? `~${money(p.oldPrice)}~  →  *${money(p.price)}*  (ahorras ${money(a)})`
+         : `${money(p.price)}`)
+    );
+  }
+
+  // WhatsApp no tiene campo aparte para el enlace: va dentro del propio texto.
+  const shareWhatsApp = (p) =>
+    `https://wa.me/?text=${encodeURIComponent(`${shareText(p)}\n\n${productUrl(p)}`)}`;
+
   function waProduct(p) {
-    const url = `${location.origin}${location.pathname.replace(/[^/]*$/, "")}producto.html?id=${p.id}`;
+    const url = productUrl(p);
     if (agotado(p)) {
       return waLink(
         `¡Hola ${LUCMAR.brand}! 👋 Vi que este producto está agotado:\n\n` +
@@ -144,9 +182,14 @@
   function productCard(p) {
     const out = agotado(p);
     // con la cinta de agotado, la etiqueta de descuento sobra y estorba
-    const badge = p.badge && !out
-      ? `<span class="product-card__badge ${p.badge === "Nuevo" ? "new" : ""}">${p.badge}</span>` : "";
-    const was = p.oldPrice ? `<span class="was">${money(p.oldPrice)}</span>` : "";
+    const off = descuentoLabel(p);
+    // el descuento manda sobre "Nuevo": vende más y dos etiquetas cargan la foto
+    const badge = out ? ""
+      : off ? `<span class="product-card__badge">${off}</span>`
+      : p.badge ? `<span class="product-card__badge ${p.badge === "Nuevo" ? "new" : ""}">${p.badge}</span>`
+      : "";
+    // solo se tacha si de verdad hay rebaja (un oldPrice igual o menor no lo es)
+    const was = off ? `<span class="was">${money(p.oldPrice)}</span>` : "";
     return `<article class="product-card${out ? " is-out" : ""}">
       <div class="product-card__media">
         ${badge}
@@ -544,7 +587,7 @@
        <span>${p.name}</span>`;
 
     const gallery = (p.gallery && p.gallery.length ? p.gallery : [p.img]);
-    const off = p.oldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : 0;
+    const off = descuentoLabel(p);
 
     root.innerHTML = `
       <div class="pdp-gallery">
@@ -567,7 +610,7 @@
         ${stars(p.rating, p.reviews)}
         <div class="pdp-price" style="margin-top:1rem">
           <span class="now">${money(p.price)}</span>
-          ${p.oldPrice ? `<span class="was">${money(p.oldPrice)}</span><span class="off">-${off}%</span>` : ""}
+          ${off ? `<span class="was">${money(p.oldPrice)}</span><span class="off">${off}</span>` : ""}
         </div>
         <p class="pdp-stock${agotado(p) ? " is-out" : pocasUnidades(p) ? " is-low" : ""}"><span class="dot"></span> ${
           agotado(p) ? "Agotado · consúltanos cuándo llega"
@@ -584,8 +627,9 @@
             ${ICON.wa} ${agotado(p) ? "Consultar cuándo llega" : "Pedir por WhatsApp"}
           </a>
           <div class="row">
-            <a class="btn btn-ghost btn-block" href="${waLink(`¡Hola ${LUCMAR.brand}! Tengo una consulta sobre *${p.name}*.`)}" target="_blank" rel="noopener" data-wa>
-              ${ICON.chat} Hacer una consulta
+            <a class="btn btn-ghost btn-block" id="pdp-share" href="${shareWhatsApp(p)}"
+               target="_blank" rel="noopener">
+              ${ICON.share} Compartir
             </a>
           </div>
           <p class="pdp-note">${ICON.shield} Te atiende directamente el equipo de ventas de Lucmar.</p>
@@ -596,6 +640,23 @@
           <div class="pdp-perk">${ICON.ret}<strong>Devoluciones</strong><span>Cambios sencillos</span></div>
         </div>
       </div>`;
+
+    /* Compartir: en el móvil abre el menú del sistema (WhatsApp, Telegram, copiar
+       enlace…). Si el navegador no lo soporta —el caso de casi todo escritorio—
+       no se toca el clic y el href lleva a WhatsApp, que ya es el respaldo.    */
+    const shareBtn = $("#pdp-share");
+    if (shareBtn && navigator.share) {
+      shareBtn.addEventListener("click", async (e) => {
+        e.preventDefault();
+        try {
+          await navigator.share({ title: p.name, text: shareText(p), url: productUrl(p) });
+        } catch (err) {
+          // El usuario cerró el menú: no es un error que valga la pena mostrar.
+          if (err && err.name === "AbortError") return;
+          window.open(shareBtn.href, "_blank", "noopener");
+        }
+      });
+    }
 
     // galería: cambiar imagen/video principal
     const mainBox = $("#pdp-main");
