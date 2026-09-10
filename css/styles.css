@@ -454,6 +454,11 @@ a.brand-tile:hover { transform: translateY(-4px); box-shadow: var(--shadow); bor
 .product-card__cat { font-size: .74rem; color: var(--amber-600); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
 .product-card__name { font-family: var(--font-body); font-weight: 600; font-size: .98rem; line-height: 1.35; color: var(--ink); letter-spacing: 0; }
 .product-card__name a:hover { color: var(--navy-600); }
+/* Código del producto. Mismo tono y tamaño que en la ficha (.pdp-sku) para
+   que catálogo y detalle se lean igual. Algunos códigos son largos
+   (MA04COM093-22100-N01), así que se parte en vez de desbordar la tarjeta. */
+.product-card__sku { font-size: .78rem; color: var(--muted); letter-spacing: .03em;
+  margin: .3rem 0 0; overflow-wrap: anywhere; }
 .rating { display: flex; align-items: center; gap: .35rem; font-size: .8rem; color: var(--muted); }
 .stars { --p: 100%; position: relative; display: inline-block; font-size: .9rem; line-height: 1; letter-spacing: 1px; }
 .stars::before { content: "★★★★★"; color: var(--line); }

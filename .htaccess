@@ -16,6 +16,15 @@ RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html[\ ?] [NC]
 RewriteRule ^index\.html$ / [R=301,L]
 
+# ---- 2c. Red de seguridad de las fichas de /p/ ----
+# Las paginas de /p/ las crea ACTUALIZAR-FICHAS.bat. Si se carga un producto y
+# se olvida ese paso, su pagina todavia no existe. En vez de un error 404, se
+# atiende con la ficha de siempre (producto.html?id=...), que arma el producto
+# leyendo el catalogo. El visitante no nota nada; lo unico que falta hasta
+# regenerar es la foto en la vista previa de WhatsApp.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^p/([^/]+)\.html$ /producto.html?id=$1 [L,QSA]
+
 # ---- 3. Desactivar el listado de directorios ----
 Options -Indexes
 
@@ -42,12 +51,20 @@ RedirectMatch 404 /\.git
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
   # CSP: permite las fuentes/imágenes externas que ya usa el sitio.
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com; media-src 'self'; frame-src https://www.youtube.com; connect-src 'self'; object-src 'none'; base-uri 'self'"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://i.ytimg.com https://www.google-analytics.com https://*.google-analytics.com; media-src 'self'; frame-src https://www.youtube.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'"
+</IfModule>
+
+# ---- 6b. Tipo MIME del JavaScript ----
+# Hostinger sirve los .js como "application/x-javascript" (un tipo heredado).
+# Las reglas de caché y compresión de abajo apuntan a "application/javascript",
+# así que no le alcanzaban: por eso el CSS obedecía al .htaccess y el JS no.
+<IfModule mod_mime.c>
+  AddType application/javascript .js
 </IfModule>
 
 # ---- 7. Compresión GZIP ----
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml application/xml
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/x-javascript application/json image/svg+xml application/xml
 </IfModule>
 
 # ---- 8. Caché del navegador ----
@@ -55,12 +72,27 @@ RedirectMatch 404 /\.git
   ExpiresActive On
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/x-javascript "access plus 1 month"
   ExpiresByType image/png "access plus 6 months"
   ExpiresByType image/jpeg "access plus 6 months"
   ExpiresByType image/webp "access plus 6 months"
   ExpiresByType image/svg+xml "access plus 6 months"
+  # Los videos de las tarjetas de categoria pesan 18 MB entre todos. Sin esta
+  # linea el navegador no sabia cuanto guardarlos y podia volver a bajarlos.
+  ExpiresByType video/mp4 "access plus 6 months"
   ExpiresByType text/html "access plus 1 day"
 </IfModule>
+
+# ---- 8b. El catalogo tambien se guarda en el navegador ----
+# products.js llevaba "no-cache": el navegador guardaba su copia pero preguntaba
+# al servidor antes de usarla, en CADA pagina. Como los productos no se pintan
+# hasta que ese archivo esta, esa consulta (unos 300 ms desde Bolivia) se notaba
+# como un retardo al entrar y al cambiar de pagina.
+# Ya no hace falta: las paginas piden el archivo con un numero de version
+# (products.js?v=16) que PREPARAR-DEPLOY.bat sube en cada publicacion. Al cambiar
+# ese numero, el navegador lo ve como un archivo distinto y lo baja de nuevo.
+# Asi los precios siguen al dia y desaparece la espera.
+# Se mantiene el ExpiresByType de arriba (un mes) para .js, que ya lo cubre.
 
 # ---- 9. Páginas de error (opcional) ----
 # ErrorDocument 404 /index.html

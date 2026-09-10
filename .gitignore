@@ -1,6 +1,21 @@
 # Panel de administración (solo local, no subir)
 admin.html
 
+# Fotos y videos ORIGINALES, antes de comprimir (141 MB entre los dos).
+# Son el respaldo por si hay que rehacer una conversión; la web usa las
+# versiones ligeras. Uno de los videos pesa 62 MB y GitHub ya avisa a
+# partir de 50, así que no tienen sitio en el repositorio.
+img/_originales/
+video/_originales/
+
+# Se generan solos con PREPARAR-DEPLOY.bat a partir de js/products.js y de
+# las fotos: 102 fichas y 102 vistas previas que cambiarían enteras en cada
+# publicación y llenarían el historial de ruido.
+# Si algún día prefieres tenerlas versionadas, borra estas tres líneas.
+p/
+img/og/
+herramientas/catalogo.json
+
 # Archivos de sistema
 .DS_Store
 Thumbs.db
