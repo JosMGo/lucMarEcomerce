@@ -171,7 +171,44 @@ const PRODUCTS = [
  
 
   /* ---- AMAZON · Alexa y hogar inteligente ---- */
-   {
+  {
+    id: "amazon-alexa-echo-pop-1-gen-verde-azul",
+    alta: "2026-09-14",
+    name: "AMAZON ALEXA ECHO POP 1 Gen - VERDE AZUL",
+    sku: "C2H4R9-V",
+    cat: "tecnologia", brand: "amazon",
+    price: 940, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/C2H4R9V-image-0-1742934214702.webp",
+    gallery: ["img/productos/C2H4R9V-image-0-1742934214702.webp", "img/productos/C2H4R9V-image-1-1742934214702.webp", "img/productos/C2H4R9V-image-2-1742934214702.webp", "img/productos/C2H4R9V-image-3-1742934214702.webp", "img/productos/C2H4R9V-image-4-1742934214702.webp", "img/productos/C2H4R9V-image-5-1742934214702.webp", "img/productos/C2H4R9V-image-6-1742934214702.webp"],
+    desc: "AMAZON ALEXA ECHO POP 1 Gen - VERDE AZULADO*SONIDO HIFI*PARLANTE FRONTAL DE 1,95\"WIFI DOBLE BANDA 2,4-5GHz*BLUETOOTH LOW ENERGY MESH Y MATTER*EERO INTEGRA",
+    features: ["Amazon Echo Pop — Tu Asistente de Voz Inteligente, Compacto y Poderoso", "Pequeño en tamaño, grande en inteligencia. El Amazon Echo Pop es el nuevo altavoz con Alexa integrado que combina diseño moderno, sonido sorprendente y control total por voz para tu hogar inteligente.", "Diseño Moderno y Elegante", "Estilo minimalista y compacto: cabe perfectamente en tu mesa de noche, estantería o escritorio.", "Ultraligero (196 g): fácil de mover y colocar en cualquier habitación.", "Diseño curvo con luz LED: indica el estado de Alexa con un toque de color.", "Sonido Claro y Potente", "Altavoz frontal de 1.95\": audio nítido y direccional, ideal para habitaciones pequeñas o medianas.", "Calibración automática del sonido: voces más claras, bajos equilibrados y una experiencia envolvente.", "Conectividad Bluetooth: reproduce música directamente desde tu móvil, tablet o laptop.", "Alexa Siempre Contigo", "Control por voz total: pide música, configura alarmas, revisa el clima o controla tus dispositivos inteligentes.", "Compatible con Amazon Music, Spotify, Apple Music y más.", "Responde tus preguntas, te recuerda tareas y te mantiene al día con solo decir “Alexa”.", "Conectividad Inteligente", "Wi-Fi de doble banda (2.4 GHz / 5 GHz) para una conexión rápida y estable.", "Bluetooth integrado para vincular otros altavoces o dispositivos.", "Configuración rápida y sencilla desde la app Alexa.", "Seguridad y Privacidad", "Botón físico para apagar los micrófonos.", "Diseñado con múltiples capas de protección, garantizando tu tranquilidad al usarlo.", "Especificaciones Técnicas", "Dimensiones: 99 × 83 × 91 mm", "Peso: 196 g", "Altavoz: 1.95” front-firing", "Alimentación: adaptador de corriente (no usa batería)", "Asistente: Alexa", "Conectividad: Wi-Fi 2.4/5 GHz + Bluetooth", "Ventajas que lo Hacen Único", "Control total de tu hogar inteligente.", "Sonido nítido en formato mini.", "Diseño moderno y discreto.", "Inteligencia Alexa integrada.", "Ideal para cualquier espacio del hogar."],
+  },
+  {
+    id: "alexa-echo-dot-5ta-gen-blanco-glaciar",
+    alta: "2026-09-14",
+    name: "ALEXA ECHO DOT 5TA GEN - BLANCO GLACIAR",
+    sku: "C2N6L4-WH",
+    cat: "tecnologia", brand: "amazon",
+    price: 1575, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/C2N6L4WH-image-0-1761569964057.webp",
+    gallery: ["img/productos/C2N6L4WH-image-0-1761569964057.webp", "img/productos/C2N6L4WH-image-1-1761569964057.webp", "img/productos/C2N6L4WH-image-2-1761569964057.webp", "img/productos/C2N6L4WH-image-3-1761569964057.webp", "img/productos/C2N6L4WH-image-4-1761569964057.webp", "img/productos/C2N6L4WH-image-5-1761569964057.webp", "img/productos/C2N6L4WH-image-6-1761569964057.webp"],
+    desc: "ALEXA ECHO DOT 5TA GEN - BLANCO GLACIAR*SONIDO VIBRANTE*PARALANTE PROYECCION FRONTAL 1.72\"*SENSOR DE MOVIMIENTO Y TEMPERATURA*EERO INTEGRADO",
+    features: ["Amazon Echo Dot 5ª Gen – Tu asistente inteligente al siguiente nivel", "Mejor sonido hasta ahora", "Disfruta de voces más nítidas, bajos más potentes y un audio envolvente en un diseño compacto.", "Alexa siempre lista para ayudarte", "Controla tu hogar inteligente, reproduce música, establece alarmas, consulta el clima o las noticias solo con tu voz.", "Hogar inteligente fácil", "Enciende luces, ajusta termostatos, controla cerraduras y más con solo pedirlo.", "Conectividad mejorada", "Incluye Wi-Fi de doble banda y compatibilidad con dispositivos de casa inteligente vía Bluetooth y Matter.", "Privacidad protegida", "Diseñado con múltiples capas de seguridad, incluido el botón para desactivar micrófonos cuando lo necesites.", "Rutinas personalizadas", "Automatiza tu día: programa música para despertar, apaga luces al dormir o recibe recordatorios importantes.", "Diseño moderno y elegante", "Acabado esférico que combina estilo y tecnología, disponible en varios colores para adaptarse a cualquier espacio.", "El Echo Dot 5ª generación es ideal para quienes quieren más que un altavoz: un verdadero asistente inteligente que hace tu vida más cómoda, conectada y entretenida."],
+  },
+  {
+    id: "amazon-alexa-echo-dot-5ta-gen-negro",
+    alta: "2026-09-14",
+    name: "AMAZON ALEXA ECHO DOT 5TA GEN NEGRO",
+    sku: "C2N6L4-N",
+    cat: "tecnologia", brand: "amazon",
+    price: 1575, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/C2N6L4N-image-0-1757703847829.webp",
+    gallery: ["img/productos/C2N6L4N-image-0-1757703847829.webp", "img/productos/C2N6L4N-image-1-1757703847829.webp", "img/productos/C2N6L4N-image-2-1757703847829.webp", "img/productos/C2N6L4N-image-3-1757703847829.webp", "img/productos/C2N6L4N-image-4-1757703847829.webp", "img/productos/C2N6L4N-image-5-1757703847829.webp", "img/productos/C2N6L4N-image-6-1757703847829.webp"],
+    desc: "AMAZON ALEXA ECHO DOT 5TA GEN NEGRO*SONIDO MEJORADO Y BAJOS POTENTES*CONTROLA HOGAR INTELIGENTE*WIFI DOBLE BANDA*CONECTIVIDAD BLUETOOTH Y MATTER*BOTON DE SILENC",
+    features: ["Amazon Echo Dot 5ª Gen – Tu asistente inteligente al siguiente nivel", "Mejor sonido hasta ahora", "Disfruta de voces más nítidas, bajos más potentes y un audio envolvente en un diseño compacto.", "Alexa siempre lista para ayudarte", "Controla tu hogar inteligente, reproduce música, establece alarmas, consulta el clima o las noticias solo con tu voz.", "Hogar inteligente fácil", "Enciende luces, ajusta termostatos, controla cerraduras y más con solo pedirlo.", "Conectividad mejorada", "Incluye Wi-Fi de doble banda y compatibilidad con dispositivos de casa inteligente vía Bluetooth y Matter.", "Privacidad protegida", "Diseñado con múltiples capas de seguridad, incluido el botón para desactivar micrófonos cuando lo necesites.", "Rutinas personalizadas", "Automatiza tu día: programa música para despertar, apaga luces al dormir o recibe recordatorios importantes.", "Diseño moderno y elegante", "Acabado esférico que combina estilo y tecnología, disponible en varios colores para adaptarse a cualquier espacio.", "El Echo Dot 5ª generación es ideal para quienes quieren más que un altavoz: un verdadero asistente inteligente que hace tu vida más cómoda, conectada y entretenida."],
+  },
+  
+  {
     id: "amazon-alexa-echo-spot-2024-negro",
     alta: "2026-08-29",
     name: "AMAZON ALEXA ECHO SPOT 2024 NEGRO",
@@ -422,6 +459,32 @@ const PRODUCTS = [
 
 
   // kingson  -----Mochilas y organización
+ 
+  {
+    id: "mochila-kingsons-15-6-negro",
+    alta: "2026-09-14",
+    name: "MOCHILA KINGSONS 15,6\" NEGRO",
+    sku: "KS24001-BLACK",
+    cat: "ergonomia", brand: "kingsons",
+    price: 590, oldPrice: null, rating: 4.6, reviews: 0, badge: "Nuevo",
+    img: "img/productos/KS24001-BLACK_551213.webp",
+    gallery: ["img/productos/KS24001-BLACK_551213.webp", "img/productos/KS24001-BLACK_178604.webp", "img/productos/KS24001-BLACK_264464.webp", "img/productos/KS24001-BLACK_360647.webp", "img/productos/KS24001-BLACK_551213.webp", "img/productos/KS24001-BLACK_591410.webp", "img/productos/KS24001-BLACK_801719.webp", "img/productos/KS24001-BLACK_834418.webp", "img/productos/KS24001-BLACK_165072.webp"],
+    desc: "MOCHILA KINGSONS 15,6\" NEGRO*DISEÑO MODERNO EJECUTIVO CON CAPACIDAD DE 19lt*MATERIAL DE ALTA RESISTENCIA*ORGANIZACION INTELIGENTE*DISEÑO LIGERO Y VERSATIL",
+    features: ["Mochila Kingsons Durable Laptop Backpack 15.6\" – Gris Oscuro (KS24001)", "Diseñada minuciosamente para equilibrar una estética ejecutiva moderna con una resistencia excepcional. Esta mochila es la combinación perfecta entre un diseño compacto, ligereza y una capacidad sorprendente, ideal tanto para tus traslados diarios como para tus viajes de negocios.", "Características Destacadas", "Protección Avanzada para tus Dispositivos: Incorpora un compartimento principal completamente acolchado, diseñado específicamente para amortiguar golpes y proteger laptops de hasta 15.6 pulgadas contra impactos cotidianos.", "Construcción de Alta Resistencia: Fabricada con una combinación premium de poliéster robusto y detalles en cuero, garantizando máxima durabilidad, un manejo frecuente sin desgaste y un acabado sofisticado.", "Organización Inteligente y Práctica: Olvídate del desorden. Dispone de múltiples secciones y bolsillos estratégicos para clasificar fácilmente tus cargadores, cuadernos, cables, documentos y gadgets esenciales.", "Confort Ergonómico Superior: Equipada con correas ergonómicas diseñadas para distribuir el peso de manera equilibrada sobre tus hombros, reduciendo la fatiga incluso durante las jornadas más largas.", "Diseño Ultra Ligero y Versátil: Con un peso de solo 1250 g y una estructura optimizada que minimiza el volumen innecesario, se adapta con total fluidez a tu rutina: desde la oficina o la universidad, hasta tus trámites rápidos por la ciudad.", "Especificaciones Técnicas", "Marca: Kingsons", "Color: Gris Oscuro (Dark Grey)", "Modelo: KS24001-Dark Grey", "Capacidad / Volumen: 19 Litros", "Peso: 1250 gramos", "Materiales: Poliéster de alta densidad y cuero", "Compatibilidad: Laptops de hasta 15.6 pulgadas", "Dimensiones: 450 mm (Ancho) × 290 mm (Alto) × 170 mm (Profundidad)"],
+  },
+  {
+    id: "mochila-urbana-kingsons-15-6-negro",
+    alta: "2026-09-14",
+    name: "MOCHILA URBANA KINGSONS 15,6\" NEGRO",
+    sku: "KS25055-BLACK",
+    cat: "ergonomia", brand: "kingsons",
+    price: 880, oldPrice: null, rating: 4.6, reviews: 0, badge: "Nuevo",
+    img: "img/productos/KS25055-BLACK_200787.webp",
+    gallery: ["img/productos/KS25055-BLACK_200787.webp", "img/productos/KS25055-BLACK_118492.webp", "img/productos/KS25055-BLACK_200787.webp", "img/productos/KS25055-BLACK_398861.webp", "img/productos/KS25055-BLACK_579064.webp", "img/productos/KS25055-BLACK_660083.webp", "img/productos/KS25055-BLACK_886272.webp", "img/productos/KS25055-BLACK_917068.webp", "img/productos/KS25055-BLACK_963299.webp"],
+    desc: "MOCHILA URBANA KINGSONS 15,6\" NEGRO*CAPACIDAD 22,5L*IMPERMEABLE DE MATERIAL RESISTENTE Y DURADERO*ALMACENAMIENTO ORGANIZADO*ERGONOMIA Y CONFORT",
+    features: ["Kingsons Mochila Urbana Ligera e Impermeable 22.5 L – Modelo KS25055", "Diseñada meticulosamente para el estilo de vida urbano moderno, esta mochila equilibra un estilo minimalista con una resistencia excepcional. Es la compañera perfecta para tus desplazamientos diarios, la universidad, viajes de negocios o escapadas de fin de semana, adaptándose por igual a hombres y mujeres.", "✨ Características Destacadas", "🌧️ Material Duradero y Resistente al Agua: Fabricada con nailon lavable 420D de alta resistencia que repele el agua y resiste los desgarros, manteniendo tus pertenencias a salvo de lluvias ligeras y derrames inesperados.", "💻 Almacenamiento Tecnológico Organizado: Cuenta con un compartimento dedicado para portátiles de hasta 15.6 pulgadas o iPads de hasta 12.9 pulgadas, respaldado por una gran capacidad de 22.5 litros.", "Distribución Eficiente: Su interior inteligente incluye múltiples bolsillos internos, un compartimento de malla con cremallera, bolsillos laterales para botellas o paraguas, y un clip desmontable para tus llaves.", "Ergonomía y Confort Absoluto: Equipada con un panel trasero moldeado de EVA que mejora la transpirabilidad y una correa de pecho ajustable diseñada para reducir la tensión en los hombros durante viajes largos.", "Acceso Rápido y Seguridad Mejorada: Dispone de un compartimento de acceso rápido ideal para tu teléfono o cartera, además de un bolsillo oculto con cremallera para resguardar tus objetos de valor más importantes.", "Diseño Versátil para Viajes: Su estética elegante incluye una práctica correa trasera para fijarla firmemente al asa de tu equipaje rodante, facilitando tus traslados en aeropuertos y terminales.", "Especificaciones Técnicas", "Marca: Kingsons", "Modelo: KS25055", "Capacidad / Volumen: 22.5 Litros", "Peso: 2.0 lbs (Ultra ligera)", "Material: Nailon lavable 420D de alta resistencia", "Colores Disponibles: Negro, marrón claro y verde", "Compatibilidad: Portátiles de hasta 15.6 pulgadas / iPad de 12.9 pulgadas", "Dimensiones: 11.8 × 7.1 × 17.7 pulgadas"],
+  },
+ 
   {
     id: "mochila-ultraligera-16l-de-15-6",
     alta: "2026-08-29",
@@ -825,6 +888,435 @@ const PRODUCTS = [
 
   // ---- TOTTO · Mochilas y accesorios escolares ----
 
+  /* ============================================================
+   LUCMAR — SOLO LO NUEVO
+   Generado el 14/9/2026, 9:42:12 a. m.
+   ------------------------------------------------------------
+   6 producto(s) que aún no están en products.js.
+
+   🖼 COPIA ESTAS IMÁGENES en su carpeta del sitio:
+   - img/productos/MA04ALY001-24260-P3Q_1.webp
+   - img/productos/MA04ALY001-24260-P3Q_2.webp
+   - img/productos/MA04ALY001-24260-P3Q_3.webp
+   - img/productos/MA04ALY001-24260-P3Q_4.web
+   - img/productos/MA04ALY001-24260-P3Q_5.webp
+   - img/productos/MA04ALY001-24260-P3Q_6.webp
+   - img/productos/MA04YAT002-2120G-N01_1.webp
+   - img/productos/MA04YAT002-2120G-N01_2.webp
+   - img/productos/MA04YAT002-2120G-N01_3.webp
+   - img/productos/MA04YAT002-2120G-N01_4.webp
+   - img/productos/MA04YAT002-2120G-N01_5.webp
+   - img/productos/MA04YAT002-2120G-N01_6.webp
+   - img/productos/MA04DGR002-26100-N01_1.webp
+   - img/productos/MA04DGR002-26100-N01_2.webp
+   - img/productos/MA04DGR002-26100-N01_3.webp
+   - img/productos/MA04DGR002-26100-N01_4.webp
+   - img/productos/MA04DGR002-26100-N01_5.webp
+   - img/productos/MA04YAT002-2420G-R92_1.webp
+   - img/productos/MA04YAT002-2420G-R92_2.webp
+   - img/productos/MA04YAT002-2420G-R92_3.webp
+   - img/productos/MA04YAT002-2420G-R92_4.webp
+   - img/productos/MA04YAT002-2420G-R92_5.webp
+   - img/productos/MA04ALY001-24260-N01_1.webp
+   - img/productos/MA04ALY001-24260-N01_2.webp
+   - img/productos/MA04ALY001-24260-N01_3.webp
+   - img/productos/MA04ALY001-24260-N01_4.webp
+   - img/productos/MA04ALY001-24260-N01_5.webp
+   - img/productos/Copia-de-Copia-de-Copia-de-perca-peso-e-medidas-29-1.webp
+
+   CÓMO PEGAR (no reemplazas nada, solo AÑADES al final de cada lista):
+   1) PRODUCTOS  → antes del  ];  de  const PRODUCTS = [
+   ============================================================ */
+
+/* ↓↓↓ PRODUCTOS · pégalos dentro de  const PRODUCTS = [ … ]  (antes del  ]; ) ↓↓↓ */
+//---TOTTO //
+   {
+    id: "mochila-universitaria-gammatto-azul-unisex",
+    alta: "2026-09-21",
+    name: "Mochila Universitaria Gammatto Azul Unisex",
+    cat: "ergonomia", brand: "totto",
+    price: 329, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MA04SHM001-2510N-Z80-ECOMMERCE_1.jpg.webp",
+    gallery: ["img/productos/MA04SHM001-2510N-Z80-ECOMMERCE_1.jpg.webp", "img/productos/MA04SHM001-2510N-Z80-ECOMMERCE_2.jpg.webp", "img/productos/MA04SHM001-2510N-Z80-ECOMMERCE_3.jpg.webp", "img/productos/MA04SHM001-2510N-Z80-ECOMMERCE_4.jpg.webp", "img/productos/MA04SHM001-2510N-Z80-ECOMMERCE_5.jpg.webp", "img/productos/MA04SHM001-2510N-Z80-ECOMMERCE_6.jpg.webp"],
+    desc: "¡Lleva tus pertenencias con estilo y comodidad con la mochila para estudiantes Gammatto! Este morral mediano, ofrece un diseño clásico con funcionalidad moderna. Fabricado en lona resistente a la abrasión, incluye un organizador interno para mantener todo en orden y un llavero en goma para mayor practicidad. Sus manijas laterales y superiores facilitan el transporte, brindando versatilidad en su uso diario. ¡Añádelo a tu colección!",
+    features: ["Color: Azul", "Género: Unisex", "Peso: 0,49", "Tamaño: Mediano"],
+  },
+  {
+    id: "mochila-escolar-pack-x-2-mochila-multiuso-kalex-durazno",
+    alta: "2026-09-21",
+    name: "Totto Kalex - Mochila talla S - poliéster - monten lava - con estuche para lápices",
+    sku: "MA04COM093-24200-R24",
+    cat: "ergonomia", brand: "totto",
+    price: 539, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/P_405233827_1.webp",
+    gallery: ["img/productos/P_405233827_1.webp", "img/productos/P_405233827_2.webp", "img/productos/P_405233827_4.webp", "img/productos/P_405233827_5.webp", "img/productos/P_405233827_6.webp", "img/productos/P_405233827_7.webp", "img/productos/P_405233827_8.webp"],
+    desc: "¡Descubre este combo escolar diseñado para ti! El set estudiante incluye un morral monten lava con porta PC de 14”, organizador y compartimento principal con doble slider, además de un accesorio multiuso ideal para el día a día. Su material liviano te asegura comodidad en todo momento. ¡Lleva este pack para el colegio ahora mismo y organiza tu rutina fácilmente!",
+    features: ["Color: Lava", "Género: Unisex", "Peso: 0,49", "Porta PC: 14\"", "Tamaño: Pequeño"],
+  },
+  {
+    id: "mochila-escolar-pack-x-2-mochila-multiuso-kalex-durazno-copi",
+    alta: "2026-09-21",
+    name: "Mochila Escolar Pack X 2 Mochila + Multiuso Kalex Durazno (copia)",
+    sku: "MA04COM093-24200-P3Q",
+    cat: "ergonomia", brand: "totto",
+    price: 539, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MA04COM093-24200-P3Q_1.webp",
+    gallery: ["img/productos/MA04COM093-24200-P3Q_1.webp", "img/productos/MA04COM093-24200-P3Q_2.webp", "img/productos/MA04COM093-24200-P3Q_3.webp", "img/productos/MA04COM093-24200-P3Q_4.webp", "img/productos/MA04COM093-24200-P3Q_5.webp", "img/productos/MA04COM093-24200-P3Q_6.webp", "img/productos/MA04COM093-24200-P3Q_7.webp"],
+    desc: "¡Descubre este combo escolar diseñado para ti! El set estudiante incluye un morral durazno con porta PC de 14”, organizador y compartimento principal con doble slider, además de un accesorio multiuso ideal para el día a día. Su material liviano te asegura comodidad en todo momento. ¡Lleva este pack para el colegio ahora mismo y organiza tu rutina fácilmente!",
+    features: ["Color: Rosado", "Género: Mujer", "Peso: 0,49", "Porta PC: 14\"", "Tamaño: Pequeño"],
+  },
+
+  {
+    id: "multiusos-sweety-heart",
+    alta: "2026-09-21",
+    name: "Multiusos Sweety Heart",
+    sku: "AJ52SWH001-2420-9JE",
+    cat: "ergonomia", brand: "totto",
+    price: 199, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AJ52SWH001-2420-9JEL_1.webp",
+    gallery: ["img/productos/AJ52SWH001-2420-9JEL_1.webp", "img/productos/AJ52SWH001-2420-9JEL_2.webp", "img/productos/AJ52SWH001-2420-9JEL_3.webp", "img/productos/AJ52SWH001-2420-9JEL_4.webp"],
+    desc: "Explora nuestro Estuche Sweety heart, diseñada para satisfacer tus necesidades diarias de organización con confort y practicidad. Con su diseño Estuche y triple bolsillo, esta Estuche es ideal para guardar tus artículos o accesorios de papelería de manera ordenada y segura. Además, su manija fija facilita su transporte y manipulación. Completa tu estilo y mantén tus objetos esenciales siempre contigo",
+    features: ["Género: Niña", "Tamaño: Grande", "Color: Azul", "Capacidad: 2.45 Lt", "Dimensiones: Alto: 12 cm x Ancho: 24 cm x Profundo 8,5 cm", "Peso: 0.125 Kg", "Material: Exterior: Poliester=100%, Forro: Poliester=100%,"],
+  },
+  {
+    id: "maletin-active-s-bolivia",
+    alta: "2026-09-09",
+    name: "Maletin Active S Bolivia",
+    sku: "ET05BOL001-2610-1D6",
+    cat: "ergonomia", brand: "totto",
+    price: 489, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/ET05BOL001-2610-1D6_1.webp",
+    gallery: ["img/productos/ET05BOL001-2610-1D6_1.webp", "img/productos/ET05BOL001-2610-1D6_2.webp", "img/productos/ET05BOL001-2610-1D6_3.webp", "img/productos/ET05BOL001-2610-1D6_4.webp"],
+    desc: "Hay maletines que solo cargan cosas. Y hay maletines que cargan algo más — convicción, identidad, orgullo de saber de dónde vienes y a dónde vas. Fabricado con materiales de alta durabilidad, diseñado para acompañarte en cada movimiento con la funcionalidad que el día exige. Múltiples compartimentos, correas ajustables y un diseño que se adapta a tu ritmo porque cargarlo todo no debería costarte nada.\nSomos fans de creer.",
+    features: ["Actividad: Viaje", "Color: Estampado", "Género: Unisex", "Material: EXTERIOR: POLIESTER=100%,", "Medidas: 47 x 25 x 19", "Peso: 0,39", "Tamaño: Pequeño"],
+  },
+
+  {
+    id: "cartuchera-escolar-grande-para-nino-2-cuerpos-hanzo-negra-t-",
+    alta: "2026-09-18",
+    name: "Cartuchera Escolar Grande para Niño 2 Cuerpos Hanzo Negra T.L",
+    sku: "AJ52HNZ001-2526-6NR",
+    cat: "ergonomia", brand: "totto",
+    price: 199, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AJ52HNZ001-2526-6NRL_1.webp",
+    gallery: ["img/productos/AJ52HNZ001-2526-6NRL_1.webp", "img/productos/AJ52HNZ001-2526-6NRL_2.webp", "img/productos/AJ52HNZ001-2526-6NRL_3.webp", "img/productos/AJ52HNZ001-2526-6NRL_4.webp"],
+    desc: "¡Mantén sus útiles organizados con estilo! La cartuchera para niño Hanzo grande tiene dos compartimentos de gran capacidad con cierre en cremallera y un espacio especial en la parte posterior para marcar su nombre. Su reata lateral permite llevarla cómodamente a la mano. Una opción práctica y funcional para que sus lápices y marcadores siempre estén en su lugar",
+    features: ["Actividad: Kids", "Color: Negro", "Edad: Niños", "Material: Exterior: Poliester=100%, Forro: Poliester=100%,", "Número de Organizadores: 2", "Peso: 0.125 Kg.", "Tamaño: Grande"],
+  },
+
+{
+    id: "mochila-para-nina-ice-pop-l-rosado",
+    alta: "2026-09-15",
+    name: "Mochila para Niña Ice Pop L Rosado",
+    sku: "MJ04ICP003-2420-0KOL",
+    cat: "ergonomia", brand: "totto",
+    price: 639, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MJ04ICP003-2420-0KOL_1.webp",
+    gallery: ["img/productos/MJ04ICP003-2420-0KOL_1.webp", "img/productos/MJ04ICP003-2420-0KOL_2.webp", "img/productos/MJ04ICP003-2420-0KOL_3.webp", "img/productos/MJ04ICP003-2420-0KOL_4.webp", "img/productos/MJ04ICP003-2420-0KOL_5.webp", "img/productos/MJ04ICP003-2420-0KOL_6.webp"],
+    desc: "¡Lleva todo al colegio con la maleta Ice Pop L! Confeccionada en poliéster resistente, esta mochila escolar ofrece un amplio compartimento principal con cierre de doble cremallera y correas acolchadas para mayor comodidad. Los bolsillos laterales son ideales para botellas, mientras que el bolsillo frontal con cierre en cremallera es perfecto para artículos pequeños. El divertido estampado en puff y el llavero tipo pom pom añaden un toque especial.",
+    features: ["Color: Rosado", "Género: Niña", "Peso: 0,55", "Tamaño: Grande"],
+  },
+  {
+    id: "mochila-sharky-9jg-t-m",
+    alta: "2026-09-15",
+    name: "Mochila Sharky 9JG T.M",
+    sku: "9JG",
+    cat: "ergonomia", brand: "totto",
+    price: 579, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/sharky9jg-1.jpeg",
+    gallery: ["img/productos/sharky9jg-1.jpeg", "img/productos/sharky9jg-2.jpeg"],
+    desc: "¡Lleva La mochila con ruedas para Niño Sharky L a casa hoy mismo! confeccionada en poliéster, cuenta con un estampado en alta densidad. Su compartimiento principal tiene cierre en doble cremallera y correas acolchadas ajustables. Incluye una manija superior en reata y bolsillos laterales porta botellas. ¡Haz que cada día de tu pequeño sea más divertido con Esta mochila única!",
+    features: [],
+  },
+  {
+    id: "lonchera-para-nino-mickey-azul",
+    alta: "2026-09-15",
+    name: "Lonchera para Niño Mickey Azul",
+    sku: "AJ61MKF001-2420-9JVM",
+    cat: "ergonomia", brand: "totto",
+    price: 299, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AJ61MKF001-2420-9JVM_1.webp",
+    gallery: ["img/productos/AJ61MKF001-2420-9JVM_1.webp", "img/productos/AJ61MKF001-2420-9JVM_2.webp", "img/productos/AJ61MKF001-2420-9JVM_4.webp", "img/productos/AJ61MKF001-2420-9JVM_5.webp", "img/productos/AJ61MKF001-2420-9JVM_6.webp", "img/productos/AJ61MKF001-2420-9JVM_7.webp"],
+    desc: "¡Lleva tus alimentos al colegio con la lonchera Mickey! Es amplia, práctica y repelente a líquidos, asegurando que los alimentos se mantengan frescos y seguros. Cuenta con un compartimento principal con doble cremallera, bolsillos laterales portabotellas con elásticos y una reata ajustable para colgar al hombro o cruzada. Además, incluye una banda posterior para anclarla ala mochila de ruedas. ¡Ideal para mantener todo en orden!",
+    features: [],
+  },
+
+  {
+    id: "estuche-avenger-hulkcap",
+    alta: "2026-09-15",
+    name: "Estuche Avenger Hulkcap",
+    sku: "AJ52AVH001-2320-5HP",
+    cat: "ergonomia", brand: "totto",
+    price: 199, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AJ52AVH001-2320-5HOU_1.webp",
+    gallery: ["img/productos/AJ52AVH001-2320-5HOU_1.webp", "img/productos/AJ52AVH001-2320-5HOU_2.webp", "img/productos/AJ52AVH001-2320-5HOU_3.webp", "img/productos/AJ52AVH001-2320-5HOU_4.webp"],
+    desc: "¡Organiza tus útiles escolares con estilo y funcionalidad! Este estuche cuenta con dos amplios compartimentos con cierre en cremallera, brindándote espacio suficiente para guardar tus lápices, bolígrafos y otros accesorios escolares. Además, tiene un espacio especial en la parte posterior para que puedas marcarla con tu nombre, evitando extravíos y asegurando que siempre sea tuya.\nLa Estuche es perfecta para acompañarte en tus días escolares, manteniendo tus utensilios organizados y protegidos. Su diseño estampado y moderno añade un toque de estilo a tu equipo escolar. No te quedes sin esta práctica y encantadora Estuche. ¡Obtén la tuya ahora y disfruta de la combinación perfecta entre moda y utilidad! Aprovecha esta oportunidad para agregar un toque de personalidad y orden a tu día escolar.",
+    features: [],
+  },
+  
+  
+  {
+    id: "mochila-para-nino-hanzo-grande-negro",
+    alta: "2026-09-15",
+    name: "Mochila para Niño Hanzo Grande Negro",
+    sku: "MJ04HNZ003-2526-6NR",
+    cat: "ergonomia", brand: "totto",
+    price: 639, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MJ04HNZ003-2526-6NRL_1.webp",
+    gallery: ["img/productos/MJ04HNZ003-2526-6NRL_1.webp", "img/productos/MJ04HNZ003-2526-6NRL_3.webp", "img/productos/MJ04HNZ003-2526-6NRL_4.webp", "img/productos/MJ04HNZ003-2526-6NRL_5-1.webp", "img/productos/MJ04HNZ003-2526-6NRL_5.webp", "img/productos/MJ04HNZ003-2526-6NRL_6.webp"],
+    desc: "¡La mochila perfecta para acompañarlo todos los días! El Mochila grande Hanzo está confeccionado en poliéster resistente, con compartimiento principal de doble cremallera y bolsillos laterales porta botellas. Sus correas acolchadas ajustables garantizan comodidad, mientras que su forro RPET, hecho de botellas plásticas recicladas, la hace ecológica. Además, su estampado en alta densidad y llavero en goma le dan un toque único.",
+    features: ["Actividad: Kids", "Color: Negro", "Edad: Niños", "Material: Exterior: Poliester=90%, Poliuretano=10%, Forro: Poliester=100%,", "Tamaño: Grande"],
+  },
+  {
+    id: "mochila-cohety-m",
+    alta: "2026-09-15",
+    name: "Mochila Cohety M",
+    sku: "8J5",
+    cat: "ergonomia", brand: "totto",
+    price: 639, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MJ04CHT002-2320-8J5M_1.webp",
+    gallery: ["img/productos/MJ04CHT002-2320-8J5M_1.webp", "img/productos/MJ04CHT002-2320-8J5M_2.webp", "img/productos/MJ04CHT002-2320-8J5M_3.webp", "img/productos/MJ04CHT002-2320-8J5M_4.webp", "img/productos/MJ04CHT002-2320-8J5M_5.webp", "img/productos/MJ04CHT002-2320-8J5M_6.webp"],
+    desc: "¡Prepárate para la aventura escolar con nuestra mochila estampado para niños! Confeccionado en resistente poliéster, Esta mochila te ofrece durabilidad y estilo para acompañar a tus pequeños en su día a día escolar. Su diseño estampado le añade un toque de diversión y personalidad a su día a día.\nnuestra mochila cuenta con un amplio compartimiento principal con cierre en doble cremallera, brindándoles espacio suficiente para llevar todos sus libros y útiles de forma organizada y segura. Las correas acolchadas ajustables para los hombros ofrecen una opción cómoda para llevarlo. Además, la manija superior en reata permite llevarlo fácilmente en la mano. Los bolsillos laterales porta botellas y el bolsillo frontal con cremallera proporcionan espacio adicional para llevar sus objetos personales. Y como un toque especial, Esta mochila incluye un llavero con tu diseño favorito. No te quedes sin el tuyo",
+    features: ["Color: Azul", "Edad: 4 a 6 Años", "Género: Niño", "Nombre de Color: Spacer", "Peso: ,482", "Ruedas: NO"],
+  },
+  {
+    id: "mochila-para-nino-apolo-m-color-gris",
+    alta: "2026-09-15",
+    name: "Mochila para Niño Apolo M color Gris",
+    sku: "MJ04APL002-2420-6YHM",
+    cat: "ergonomia", brand: "totto",
+    price: 579, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MJ04APL002-2420-6YHM_1.webp",
+    gallery: ["img/productos/MJ04APL002-2420-6YHM_1.webp", "img/productos/MJ04APL002-2420-6YHM_2.webp", "img/productos/MJ04APL002-2420-6YHM_3.webp", "img/productos/MJ04APL002-2420-6YHM_4.webp", "img/productos/MJ04APL002-2420-6YHM_5.webp", "img/productos/MJ04APL002-2420-6YHM_6.webp"],
+    desc: "¡Organiza todo lo necesario para el colegio con la maleta Apolo! Esta mochila mediana está confeccionada en resistente poliéster y tiene un compartimento principal con cierre de doble cremallera, además de correas acolchadas ajustables para los hombros. Incluye bolsillos laterales porta botellas, bolsillos frontales y detalles reflectivos en el frente y los parches. ¡Haz que tu niño vaya preparado y seguro con esta práctica maleta para el colegio!",
+    features: ["Color: Gris", "Género: Niño", "Peso: 0,45", "Tamaño: Mediano", "Bolsillo para botella", "Correa ajustable"],
+  },
+  {
+    id: "mochila-para-nino-mickey-azul-2",
+    alta: "2026-09-16",
+    name: "Mochila para Niño Mickey Azul",
+    sku: "MJ04MKF001-2420-9JVS",
+    cat: "ergonomia", brand: "totto",
+    price: 599, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MJ04MKF001-2420-9JVS_1.webp",
+    gallery: ["img/productos/MJ04MKF001-2420-9JVS_1.webp", "img/productos/MJ04MKF001-2420-9JVS_2.webp", "img/productos/MJ04MKF001-2420-9JVS_3.webp", "img/productos/MJ04MKF001-2420-9JVS_4.webp", "img/productos/MJ04MKF001-2420-9JVS_5.webp", "img/productos/MJ04MKF001-2420-9JVS_6.webp"],
+    desc: "¡Haz que tu hijo disfrute del regreso a clases con la maleta para el colegio Mickey! esta mochila pequeño, hecho de poliéster, presenta un atractivo estampado en alta densidad y detalles en piel de durazno. El compartimiento principal con doble cremallera y las correas acolchadas ajustables brindan comodidad y seguridad. Además, incluye bolsillos laterales porta botellas y un llavero de goma de Mickey.",
+    features: ["Color: Azul", "Género: Niño", "Peso: 0,49", "Tamaño: Pequeño"],
+  },
+  {
+    id: "mochila-saurus-l",
+    alta: "2026-09-15",
+    name: "Mochila Saurus L",
+    sku: "MJ04SAU003-2320-5D2",
+    cat: "ergonomia", brand: "totto",
+    price: 649, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MJ04SAU003-2320-5D2L_1.webp",
+    gallery: ["img/productos/MJ04SAU003-2320-5D2L_1.webp", "img/productos/MJ04SAU003-2320-5D2L_2.webp", "img/productos/MJ04SAU003-2320-5D2L_3.webp", "img/productos/MJ04SAU003-2320-5D2L_5.webp", "img/productos/MJ04SAU003-2320-5D2L_6.webp"],
+    desc: "¡Prepárate para la aventura escolar con nuestra mochila estampado para niños! Confeccionado en resistente poliéster, Esta mochila te ofrece durabilidad y estilo para acompañar a tus pequeños en su día a día escolar. Su diseño estampado le añade un toque de diversión y personalidad a su día a día.\nnuestra mochila cuenta con un amplio compartimiento principal con cierre en doble cremallera, brindándoles espacio suficiente para llevar todos sus libros y útiles de forma organizada y segura. Las correas acolchadas ajustables para los hombros ofrecen una opción cómoda para llevarlo. Además, la manija superior en reata permite llevarlo fácilmente en la mano. Los bolsillos laterales porta botellas y el bolsillo frontal con cremallera proporcionan espacio adicional para llevar sus objetos personales. Y como un toque especial, Esta mochila incluye un llavero con tu diseño favorito. No te quedes sin el tuyo",
+    features: ["Color: Verde", "Género: Niño", "Nombre de Color: Saurus", "Peso: ,505", "Ruedas: NO"],
+  },
+
+  {
+    id: "mochila-para-nina-magic-spark-grande-rosado",
+    alta: "2026-09-15",
+    name: "Mochila para Niña Magic Spark Grande Rosado",
+    sku: "MJ04MGS003-2526-4PV",
+    cat: "ergonomia", brand: "totto",
+    price: 659, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MJ04MGS003-2526-4PVL_1.webp",
+    gallery: ["img/productos/MJ04MGS003-2526-4PVL_1.webp", "img/productos/MJ04MGS003-2526-4PVL_2.webp", "img/productos/MJ04MGS003-2526-4PVL_3.webp", "img/productos/MJ04MGS003-2526-4PVL_4.webp", "img/productos/MJ04MGS003-2526-4PVL_5.webp", "img/productos/MJ04MGS003-2526-4PVL_6.webp"],
+    desc: "¡Haz que tu día brille desde el primer momento! La mochila para niña Magic Spark grande tiene un compartimiento principal con doble cremallera, bolsillo frontal con cierre, bolsillos portabotellas, manija superior y correas acolchadas ajustables. El forro interior en RPET proviene de botellas recicladas. Su diseño resalta por su encapsulado de estrellas, unicornio en goma y un tierno llavero tipo pompón. ¡Lleva tu mundo lleno de color al colegio!",
+    features: ["Actividad: Kids", "Color: Rosado", "Edad: Niños", "Material: Exterior: Poliester=80%, Policloruro De Vinilo=20%, Forro: Poliester=100%,", "Tamaño: Grande"],
+  },
+  {
+    id: "mochila-kong-lab-m",
+    alta: "2026-09-15",
+    name: "Mochila Kong Lab L",
+    sku: "MJ04KLB003-2410-8JDL",
+    cat: "ergonomia", brand: "totto",
+    price: 559, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/5000001025891-900x1200-0.webp",
+    gallery: ["img/productos/5000001025891-900x1200-1.webp", "img/productos/5000001025891-900x1200-2.webp", "img/productos/5000001025891-900x1200-3.webp", "img/productos/5000001025891-900x1200-4.webp", "img/productos/5000001025891-900x1200-5.webp", "img/productos/5000001025891-900x1200-6.webp"],
+    desc: "Esta mochila para Niño Kong Lab es esencial para el colegio de tu hijo. Confeccionado en poliéster resistente, destaca por su estampado en la parte frontal, añadiendo un toque de diversión al día. Con compartimento principal de doble cremallera, correas acolchadas ajustables y manija superior en reata para un transporte cómodo. Bolsillos laterales porta botellas y frontal con cremallera para mantener todo organizado.",
+    features: ["Color: Estampado", "Edad: 7 a 10 Años", "Género: Niño", "Peso: ,461"],
+  },
+
+  {
+    id: "almohada-de-viaje-memory-foam-jet-pillow-morado",
+    alta: "2026-09-15",
+    name: "Almohada de Viaje Memory Foam Jet Pillow Morado",
+    sku: "AT79IND001-2520-M5I",
+    cat: "escritorio", brand: "totto",
+    price: 229, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AT79IND001-2520-M5I_1.webp",
+    gallery: ["img/productos/AT79IND001-2520-M5I_1.webp", "img/productos/AT79IND001-2520-M5I_2.webp", "img/productos/AT79IND001-2520-M5I_3.webp", "img/productos/AT79IND001-2520-M5I_4.webp"],
+    desc: "Almohada de Viaje Memory Foam Jet Pillow Morada",
+    features: ["Actividad: Viaje", "Color: Morado", "Edad: Adultos", "Género: Mujer", "Material: Exterior: Poliester=100%, Relleno: Poliuretano=100%,", "Medidas: Alto: 32.5 cm x Ancho:10 cm x Profundo: 29 cm", "Peso: 0.258 Kg."],
+  },
+  {
+    id: "estuche-escolar-grande-para-nino-2-cuerpos-grogu-negro",
+    alta: "2026-09-15",
+    name: "Estuche Escolar Grande para Niño 2 Cuerpos Grogu Negro",
+    sku: "AJ52GRG001-2616-6EZ",
+    cat: "ergonomia", brand: "totto",
+    price: 209, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AJ52GRG001-2616-6EZ_1.webp",
+    gallery: ["img/productos/AJ52GRG001-2616-6EZ_1.webp", "img/productos/AJ52GRG001-2616-6EZ_2.webp", "img/productos/AJ52GRG001-2616-6EZ_3.webp", "img/productos/AJ52GRG001-2616-6EZ_4.webp", "img/productos/AJ52GRG001-2616-6EZ_5.webp"],
+    desc: "¡Organiza sus útiles con Grogu! El estuche escolar para niño Grogu negra cuenta con dos compartimentos de gran capacidad con cierre en cremallera. Tiene reata lateral para llevarla fácilmente en la mano y espacio posterior para marcar su nombre. Incluye forro interno en material RPET hecho con botellas recicladas. Ideal para el colegio, con su personaje favorito siempre cerca.",
+    features: ["Actividad: Moda", "Color: Negro", "Edad: Niños", "Género: Niño", "Material: Exterior: Poliester=100%, Forro: Poliester=100%,", "Medidas: Alto: 23 cm x Ancho:12 cm x Profundo: 9 cm", "Número de Organizadores: 2", "Peso: 0.125 Kg.", "Tamaño: Grande", "Capacidad: 2.48 Lt."],
+  },
+
+{
+    id: "estuche-escolar-grande-para-nino-2-cuerpos-spiderman-urban-r",
+    alta: "2026-09-15",
+    name: "Estuche Escolar Grande para Niño 2 Cuerpos Spiderman Urban Rojo",
+    sku: "AJ52SPD001-2616-0RD",
+    cat: "ergonomia", brand: "totto",
+    price: 209, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AJ52SPD001-2616-0RD_1.webp",
+    gallery: ["img/productos/AJ52SPD001-2616-0RD_1.webp", "img/productos/AJ52SPD001-2616-0RD_2.webp", "img/productos/AJ52SPD001-2616-0RD_3.webp", "img/productos/AJ52SPD001-2616-0RD_4.webp", "img/productos/AJ52SPD001-2616-0RD_5.webp"],
+    desc: "¡Haz que cada lápiz tenga su lugar con El estuche escolar grande para Niño Spiderman Urban! Cuenta con dos compartimentos de gran capacidad con cierre en cremallera, reata lateral para fácil transporte y espacio posterior para marcar su nombre. Incluye forro RPET elaborado con botellas plásticas recicladas, ideal para acompañarlo en su rutina escolar. ¡Cómprala sin complicaciones!",
+    features: ["Actividad: Moda", "Color: Rojo", "Edad: Niños", "Género: Niño", "Material: Exterior: Poliester=100%, Forro: Poliester=100%,", "Medidas: Alto: 23 cm x Ancho:12 cm x Profundo: 9 cm", "Número de Organizadores: 2", "Peso: 0.125 Kg.", "Tamaño: Grande", "Capacidad: 2.48 Lt."],
+  },
+
+{
+    id: "estuche-escolar-grande-para-nina-2-cuerpos-bloum-azul",
+    alta: "2026-09-15",
+    name: "Estuche Escolar Grande para Niña 2 Cuerpos Bloum Azul",
+    sku: "AJ52BOM001-2616-8LD",
+    cat: "ergonomia", brand: "totto",
+    price: 199, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AJ52BOM001-2616-8LD_1.webp",
+    gallery: ["img/productos/AJ52BOM001-2616-8LD_1.webp", "img/productos/AJ52BOM001-2616-8LD_2.webp", "img/productos/AJ52BOM001-2616-8LD_3.webp"],
+    desc: "¡Organiza cada útil con El estuche escolar grande para niña 2 cuerpos Bloum! Diseñada con dos compartimentos espaciosos con cierre en cremallera, incluye una práctica reata lateral para llevarla fácilmente y espacio posterior para marcar el nombre. Su interior cuenta con forro RPET elaborado a partir de botellas plásticas recicladas. Una opción ideal para acompañar su rutina escolar. ¡Llévala ahora mismo!",
+    features: ["Actividad: Kids", "Color: Azul", "Edad: Niños", "Género: Niña", "Material: Exterior: Poliester=100%, Forro: Poliester=100%,", "Medidas: Alto: 23 cm x Ancho:12 cm x Profundo: 9 cm", "Número de Organizadores: 2", "Peso: 0.105 Kg.", "Tamaño: Grande"],
+  },
+
+{
+    id: "maletin-de-viaje-active-pequena-negra",
+    alta: "2026-09-14",
+    name: "Maletín de viaje Active Pequeña Negra",
+    sku: "ET05ACT025-2526-N01",
+    cat: "ergonomia", brand: "totto",
+    price: 279, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/ET05ACT025-2526-N01S_1.webp",
+    gallery: ["img/productos/ET05ACT025-2526-N01S_1.webp", "img/productos/ET05ACT025-2526-N01S_2.webp", "img/productos/ET05ACT025-2526-N01S_3.webp", "img/productos/ET05ACT025-2526-N01S_4.webp", "img/productos/ET05ACT025-2526-N01S_5.webp", "img/productos/ET05ACT025-2526-N01S_6.webp"],
+    desc: "¡Muévete sin límites! La Maletín viajera Active es ideal para deporte, salidas casuales o escapadas de fin de semana. Con diseño compacto y antirasgado, incluye correas ajustables para llevar al hombro con comodidad, kissing deslizadores de cremallera para más seguridad y capacidad de 22 litros. Su material en poliéster RPET la hace resistente y funcional para cualquier aventura. ¡Llévala donde quieras sin complicaciones!",
+    features: ["Actividad: Viaje", "Color: Negro", "Edad: Adultos", "Género: Unisex", "Material: Exterior: Poliester=100%,", "Número de Organizadores: 2", "Peso: 0.39 Kg.", "Tamaño: Pequeño", "Argolla para candado", "Correa de hombro removible", "Hecho con RPET reciclado de botellas descartadas"],
+  },
+  {
+    id: "adaptador-de-viaje-volt",
+    alta: "2026-09-14",
+    name: "Adaptador de Viaje Volt",
+    sku: "P332",
+    cat: "tecnologia", brand: "totto",
+    price: 389, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    stock: 0,
+    img: "img/productos/AT78IND004-2310-N01U_1.webp",
+    gallery: ["img/productos/AT78IND004-2310-N01U_1.webp", "img/productos/AT78IND004-2310-N01U_2.webp", "img/productos/AT78IND004-2310-N01U_3.webp", "img/productos/AT78IND004-2310-N01U_4.webp", "img/productos/AT78IND004-2310-N01U_5.webp"],
+    desc: "¡La Carga para tus dispositivos electrónicos ya no es un problema! El Adaptador de Corriente para Viaje Volt es pequeño, práctico y fácil de usar, ideal para llevar a tu próximo destino internacional.",
+    features: ["Detalles", "Color: Negro", "Género: Hombre", "Peso: 0,12", "Ruedas: NO"],
+  },
+  {
+    id: "billetera-hombre-riva-grande-con-rfid-blocker-negro",
+    alta: "2026-09-14",
+    name: "Billetera Hombre Riva Grande con RFID Blocker Negro",
+    sku: "AC51RIV002-2616B-N01",
+    cat: "ergonomia", brand: "totto",
+    price: 309, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AC51RIV002-2616B-N01_1.webp",
+    gallery: ["img/productos/AC51RIV002-2616B-N01_1.webp", "img/productos/AC51RIV002-2616B-N01_2.webp", "img/productos/AC51RIV002-2616B-N01_3.webp", "img/productos/AC51RIV002-2616B-N01_4.webp", "img/productos/AC51RIV002-2616B-N01_5.webp"],
+    desc: "¡Haz de tu seguridad una prioridad! La billetera Riva grande incluye cierre en velcro con diente plástico, compartimentos para tarjetas y billetes, bolsillo para monedas y espacio interno en malla. Su sistema RFID Blocker ayuda a prevenir accesos no autorizados a tus datos personales. El forro, hecho con botellas recicladas, y su exterior resistente, completan un diseño práctico. ¡Llévala contigo a donde vayas!",
+    features: ["Actividad: Casual", "Color: Negro", "Edad: Adultos", "Género: Hombre", "Material: Exterior: Poliester=100%, Forro: Poliester=100%,", "Medidas: Alto: 10 cm x Ancho: 10.5 cm x Profundo: 2 cm", "Número de Organizadores: 10", "Peso: 0.075 Kg.", "Tamaño: Grande", "RFID blocker", "Bolsillo para monedas", "Bolsillo interno en malla", "Organizadores para tarjetas", "Organizador para billetes"],
+  },
+
+{
+    id: "almohada-de-viaje-memory-foam-jet-pillow-negra",
+    alta: "2026-09-14",
+    name: "Almohada de viaje Memory Foam Jet Pillow Negra",
+    sku: "AT79IND001-2510-N01U",
+    cat: "ergonomia", brand: "totto",
+    price: 229, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/AT79IND001-2510-N01U-ECOMMERCE_1.webp",
+    gallery: ["img/productos/AT79IND001-2510-N01U-ECOMMERCE_1.webp", "img/productos/AT79IND001-2510-N01U-ECOMMERCE_2.webp", "img/productos/AT79IND001-2510-N01U-ECOMMERCE_3.webp", "img/productos/AT79IND001-2510-N01U-ECOMMERCE_4.webp"],
+    desc: "Disfruta de tus vuelos con esta almohada para viaje, la compañera ideal para un descanso sin molestias. Fabricada en poliéster con una textura suave y relleno de Memory Foam, ofrece un soporte excepcional para tu cuello, previniendo el dolor cervical durante tus desplazamientos. Con su práctico broche, puedes asegurarla fácilmente alrededor de tu cuello para un ajuste perfecto. ¡Haz tu viaje más cómodo ahora! No te pierdas la comodidad.",
+    features: ["Actividad: Viaje", "Color: Negro", "Edad: Adultos", "Material: Exterior: Poliester=100%, Relleno: Poliuretano=100%,", "Producto especializado para viaje", "Fácil de limpiar", "Material no deformable", "Forro removible en almohada", "Enrollable", "Almohada ergonomica"],
+  },
+
+  {
+    id: "mochila-porta-pc-15-4-mochila-arlyn-durazno-mujer",
+    alta: "2026-09-14",
+    name: "Mochila Porta PC 15.4\" Mochila Arlyn Durazno Mujer",
+    sku: "MA04ALY001-24260-P3Q",
+    cat: "ergonomia", brand: "totto",
+    price: 599, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    stock: 0,
+    img: "img/productos/MA04ALY001-24260-P3Q_1.webp",
+    gallery: ["img/productos/MA04ALY001-24260-P3Q_1.webp", "img/productos/MA04ALY001-24260-P3Q_2.webp", "img/productos/MA04ALY001-24260-P3Q_3.webp", "img/productos/MA04ALY001-24260-P3Q_4.webp", "img/productos/MA04ALY001-24260-P3Q_5.webp", "img/productos/MA04ALY001-24260-P3Q_6.webp"],
+    desc: "Descripción\n¡Transforma tu día a día con la mochila moderna Arlyn M! Ideal para la oficina, universidad o cualquier actividad, cuenta con un bolsillo porta PC de 15.4\" y está hecho de poliéster reciclado de aproximadamente 4 botellas de plástico. Su diseño liviano y acolchado, junto con el organizador con portallaves, el bolsillo para botella y su pasador para morral de ruedas, lo hacen perfecto para cualquier ocasión.¡Adquiere el tuyo hoy mismo!",
+    features: ["Detalles", "Color: Rosado", "Género: Mujer", "Peso: 0,59", "Porta PC: 15.4\"", "Tamaño: Mediano", "Llavero extraíble", "Bolsillo para botella", "Pasador en ruedas", "15.4 pulgadas", "Posterior acolchado para mayor comodidad"],
+  },
+  {
+    id: "mochila-ecofriendly-eufrates",
+    alta: "2026-09-14",
+    name: "Mochila Ecofriendly Eufrates",
+    sku: "MA04YAT002-2120G-N01",
+    cat: "ergonomia", brand: "totto",
+    price: 480, oldPrice: 799, rating: 4.8, reviews: 0, badge: "-40%",
+    img: "img/productos/MA04YAT002-2120G-N01_1.webp",
+    gallery: ["img/productos/MA04YAT002-2120G-N01_1.webp", "img/productos/MA04YAT002-2120G-N01_2.webp", "img/productos/MA04YAT002-2120G-N01_3.webp", "img/productos/MA04YAT002-2120G-N01_4.webp", "img/productos/MA04YAT002-2120G-N01_5.webp", "img/productos/MA04YAT002-2120G-N01_6.webp"],
+    desc: "¡Todo lo que buscabas en una solo Mochila, espacioso, cómodo y amigable con el planeta! Tiene compartimento principal con cierre en cremallera doble slider y una hebilla de seguridad, porta PC de 13”, porta tablet de 1”, bolsillo frontal con múltiples organizadores, salida de audio, llavero extraíble y bolsillos laterales. Espaldar acolchado para mantener la comodidad en tu espalda, correas ajustables, bolsillo secreto y apliques reflectivos.",
+    features: ["Detalles", "Color: Negro", "Género: Unisex", "Material: Exterior: Poliester Reciclado=100%, Forro: Poliester Reciclado=100%,", "Medidas: 30.5 x 46.5 x 18.5 cm.", "Nombre de Color: Negro/Black", "Peso: ,552", "Porta PC: 13\"", "Ruedas: NO", "Tamaño: Grande", "Capacidad: 26.24 lt."],
+  },
+ {
+    id: "mochila-universitaria-dragonar-porta-pc-15-unisex-negro",
+    alta: "2026-09-14",
+    name: "Mochila universitaria Dragonar Porta PC 15\" Unisex Negro",
+    sku: "MA04DGR002-26100-N01",
+    cat: "ergonomia", brand: "totto",
+    price: 299, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MA04DGR002-26100-N01_1.webp",
+    gallery: ["img/productos/MA04DGR002-26100-N01_1.webp", "img/productos/MA04DGR002-26100-N01_2.webp", "img/productos/MA04DGR002-26100-N01_3.webp", "img/productos/MA04DGR002-26100-N01_4.webp", "img/productos/MA04DGR002-26100-N01_5.webp"],
+    desc: "¡Espacio para cada clase! La Mochila universitaria Dragonar cuenta con compartimento para tu portátil de 15 pulgadas, capacidad para cuadernos, carpeta y estuche en una estructura amplia y cómoda. Su lona resistente a la abrasión responde bien al uso frecuente, mientras el portallaves ayuda a ubicar objetos pequeños sin perder tiempo. El bolsillo lateral para botella complementa una distribución práctica para tus días. ¡Agrégalo al carrito!",
+    features: ["Actividad: Estudio", "Color: Negro", "Edad: Adultos", "Género: Unisex", "Material: Exterior: Poliester=100%, Forro: Poliester=100%,", "Medidas: Alto: 28 cm x Ancho: 41.5 cm x Profundo: 11.5 cm", "Peso: 0.336 Kg.", "Porta PC: 15\"", "Tamaño: Grande", "Capacidad: 13.36 Lt.", "Bolsillo para botella", "Mosquetón porta llaves"],
+  },
+  {
+    id: "mochila-universitaria-porta-pc-13-eufrates-rojo-mujer",
+    alta: "2026-09-14",
+    name: "Mochila Universitaria Porta PC 13\" Eufrates Rojo Mujer",
+    sku: "MA04YAT002-2420G-R92",
+    cat: "ergonomia", brand: "totto",
+    price: 799, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MA04YAT002-2420G-R92_1.webp",
+    gallery: ["img/productos/MA04YAT002-2420G-R92_1.webp", "img/productos/MA04YAT002-2420G-R92_2.webp", "img/productos/MA04YAT002-2420G-R92_3.webp", "img/productos/MA04YAT002-2420G-R92_4.webp", "img/productos/MA04YAT002-2420G-R92_5.webp"],
+    desc: "¡Mejora tu experiencia diaria con el maletín juvenil Eufrates! Cuenta con compartimientos para PC de 13 pulgadas y tableta de 10 pulgadas. Fabricado con lona RPET de 27 botellas recicladas, incluye un bolsillo porta celular, organizador con portallaves y múltiples compartimentos. Cuenta con cortes reflectivos, bolsillo secreto y slider de seguridad con chapa. Con espaldar ergonómico y correas acolchadas, esta mochila brinda máxima comodidad.",
+    features: ["Color: Rojo", "Género: Mujer", "Peso: 0,55", "Porta PC: 13\"", "Tamaño: Grande", "Llavero extraíble", "Bolsillo para botella", "Bolsillo secreto", "Bolsillo para celular", "Argolla para candado", "Bolsillo Para laptop de 13 pulgadas", "Bolsillo Para table de  10 pulgadas", "Reflectivo", "Fácil de limpiar", "Repelente a líquidos", "lente óptico"],
+  },
+  {
+    id: "mochila-porta-pc-15-4-mochila-arlyn-negro-mujer",
+    alta: "2026-09-14",
+    name: "Mochila Porta PC 15.4\" Mochila Arlyn Negro Mujer",
+    sku: "MA04ALY001-24260-N01",
+    cat: "ergonomia", brand: "totto",
+    price: 599, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
+    img: "img/productos/MA04ALY001-24260-N01_1.webp",
+    gallery: ["img/productos/MA04ALY001-24260-N01_1.webp", "img/productos/MA04ALY001-24260-N01_2.webp", "img/productos/MA04ALY001-24260-N01_3.webp", "img/productos/MA04ALY001-24260-N01_4.webp", "img/productos/MA04ALY001-24260-N01_5.webp"],
+    desc: "¡Transforma tu día a día con la mochila moderna Arlyn M! Ideal para la oficina, universidad o cualquier actividad, cuenta con un bolsillo porta PC de 15.4\" y está hecho de poliéster reciclado de aproximadamente 4 botellas de plástico. Su diseño liviano y acolchado, junto con el organizador con portallaves, el bolsillo para botella y su pasador para morral de ruedas, lo hacen perfecto para cualquier ocasión.¡Adquiere el tuyo hoy mismo!",
+    features: ["Color: Negro", "Género: Mujer", "Peso: 0,59", "Porta PC: 15.4\"", "Tamaño: Mediano"],
+  },
+  {
+    id: "fiver-vit",
+    alta: "2026-09-08",
+    name: "FIVER VIT",
+    cat: "salud-bienestar", brand: "bem-estar-life",
+    price: 190, oldPrice: null, rating: 4.5, reviews: 0, badge: "Nuevo",
+    img: "img/productos/Copia-de-Copia-de-Copia-de-perca-peso-e-medidas-29-1.webp",
+    gallery: ["img/productos/Copia-de-Copia-de-Copia-de-perca-peso-e-medidas-29-1.webp"],
+    desc: "Fiber Vit es un suplemento en cápsulas que aporta vitaminas,\nminerales y fibra de alta absorción, ideal para\ncomplementar nutrientes que la dieta no aporta. Las fibras de\nagar-agar, espirulina y psyllium actúan directamente en la\nregulación intestinal, ya que, al entrar en contacto con el agua, forman una especie de gel que\nfacilita la formación y eliminación de heces,\ncontribuyendo a un intestino sano y regulado.\nFiber Vit es un suplemento en cápsulas que aporta vitaminas,\nminerales y fibra de alta absorción, ideal para complementar nutrientes que la dieta no aporta. Las fibras de agar-agar, espirulina y psyllium actúan directamente en la regulación intestinal, ya que, al entrar en contacto con el agua, forman una especie de gel que facilita la formación y\neliminación de heces, contribuyendo a un intestino sano y regulado.",
+    features: ["Ayuda a reponer nutrientes.", "Ayuda con la inmunidad.", "Ayuda con la función intestinal.", "Ayuda a proteger contra el daño", "causado por los radicales libres."],
+  },
+
+
   {
     id: "estuche-escolar-para-nino-vortex-negro",
     alta: "2026-09-09",
@@ -837,18 +1329,6 @@ const PRODUCTS = [
     desc: "¡Haz que la organización también sea divertida con El estuche escolar para niño Vortex! Su frente termoformado tipo consola te hará sobre salir en todas tus clases. Cuanta con un compartimento amplio y con cierre en cremallera ideal para esferos, colores y más útiles, reata lateral para llevar fácilmente y espacio posterior para marcar el nombre. Incluye forro RPET elaborado con botellas recicladas. ¡Agrégala al carrito ya mismo!",
     features: ["Actividad: Kids", "Color: Negro", "Edad: Niños", "Género: Niño", "Material: Exterior: Poliester=100%, Forro: Poliester=100%, Relleno: Etil Vinil Acetato=100%,", "Medidas: Alto: 24 cm x Ancho:12 cm x Profundo: 8 cm", "Peso: 0.125 Kg", "Capacidad: 2.3 Lt."],
   },
-  {
-    id: "maletin-active-s-bolivia",
-    alta: "2026-09-09",
-    name: "Maletin Active S Bolivia",
-    sku: "ET05BOL001-2610-1D6",
-    cat: "ergonomia", brand: "totto",
-    price: 259, oldPrice: 489, rating: 4.8, reviews: 0, badge: "-47%",
-    img: "img/productos/ET05BOL001-2610-1D6_1.webp",
-    gallery: ["img/productos/ET05BOL001-2610-1D6_1.webp", "img/productos/ET05BOL001-2610-1D6_2.webp", "img/productos/ET05BOL001-2610-1D6_3.webp", "img/productos/ET05BOL001-2610-1D6_4.webp"],
-    desc: "Hay maletines que solo cargan cosas. Y hay maletines que cargan algo más — convicción, identidad, orgullo de saber de dónde vienes y a dónde vas. Fabricado con materiales de alta durabilidad, diseñado para acompañarte en cada movimiento con la funcionalidad que el día exige. Múltiples compartimentos, correas ajustables y un diseño que se adapta a tu ritmo porque cargarlo todo no debería costarte nada.\nSomos fans de creer.",
-    features: ["Actividad: Viaje", "Color: Estampado", "Género: Unisex", "Material: EXTERIOR: POLIESTER=100%,", "Medidas: 47 x 25 x 19", "Peso: 0,39", "Tamaño: Pequeño"],
-  },
 
   {
     id: "mochila-para-nina-frozen-destiny-azul",
@@ -856,7 +1336,7 @@ const PRODUCTS = [
     name: "Mochila para Niña Frozen Destiny Azul",
     sku: "MJ04FZD002-2420-0JLM",
     cat: "ergonomia", brand: "totto",
-    price: 299, oldPrice: 599, rating: 4.8, reviews: 0, badge: "-50%",
+    price: 599, oldPrice: null, rating: 4.8, reviews: 0, badge: "Nuevo",
     img: "img/productos/MJ04FZD002-2420-0JLM_1.webp",
     gallery: ["img/productos/MJ04FZD002-2420-0JLM_1.webp", "img/productos/MJ04FZD002-2420-0JLM_2.webp"],
     desc: "¡Lleva la magia de Frozen contigo! Este mochila mediana Frozen Destiny M es ideal para niñas. Fabricada en poliéster, presenta un encantador estampado en alta densidad con glitter en el frente. Su compartimiento principal tiene cierre en doble cremallera, correas acolchadas ajustables y una manija superior en reata. Incluye bolsillos laterales porta botellas y un práctico bolsillo frontal con cremallera. Además, trae un adorable llavero de goma.",
@@ -962,6 +1442,19 @@ const PRODUCTS = [
   /* ---- UGREEN · Cables y conectividad ---- */
   
   {
+    id: "power-bank-robot-30w-10000mah-gris",
+    alta: "2026-09-14",
+    name: "POWER BANK ROBOT 30W 10000mAh GRIS",
+    sku: "35603B",
+    cat: "energia", brand: "ugreen",
+    price: 735, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/35603B-image-0-1743605727382.webp",
+    gallery: ["img/productos/35603B-image-0-1743605727382.webp", "img/productos/35603B-image-1-1743605727382.webp", "img/productos/35603B-image-2-1743605727382.webp", "img/productos/35603B-image-3-1743605727382.webp", "img/productos/35603B-image-4-1743605727382.webp", "img/productos/35603B-image-5-1743605727382.webp", "img/productos/35603B-image-6-1743605727382.webp", "img/productos/35603B-image-7-1743605727382.webp"],
+    desc: "POWER BANK ROBOT 30W 10000mAh GRIS*DISPLAY DIGITAL CON EXPRESIONES*2xUSB-C/1xUSB A* SOPORTA SCP/QC3.0/PD3.0/PPS/FCP/APPLE 5V2.4A/SAMSUANG 5V2A/BC1.2",
+    features: [],
+  },
+
+  {
     id: "mini-power-bank-inalambrico-rosa-magsafe",
     alta: "2026-09-09",
     name: "MINI POWER BANK INALAMBRICO ROSA MAGSAFE",
@@ -1006,9 +1499,9 @@ const PRODUCTS = [
     name: "CABLE USB 3.2 Gen 2 TIPO-C a C 1M",
     sku: "80150",
     cat: "redes", brand: "ugreen",
-    price: 215, oldPrice: null, rating: 4.7, reviews: 0, badge: null,
-    img: "img/productos/cable-usb-3.2-gen2.webp",
-    gallery: ["img/productos/cable-usb-3.2-gen2.webp"],
+    price: 215, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/80150-image-1-1712095804127.webp",
+    gallery: ["img/productos/80150-image-1-1712095804127.webp", "img/productos/80150-image-2-1712095808123.webp", "img/productos/80150-image-3-1712095811586.webp", "img/productos/80150-image-4-1712095815746.webp"],
     desc: "Carga y transfiere datos a máxima velocidad con este cable USB-C a USB-C 3.2 Gen 2. Soporta carga rápida de hasta 100W (5A) y transferencia de datos de hasta 10 Gbps, ideal para laptops, tablets, smartphones y otros dispositivos USB-C. Además, es compatible con Thunderbolt 3, ofreciendo un rendimiento confiable para trabajo y entretenimiento.",
     features: ["USB C", "10 Gbps,", "CARGA100 W", "video 4K de hasta 3840x2160 @ 60 HZ", "20 V 5 A,", "20 x 14 x 3 cm", "100 gramos"],
   },
@@ -1176,7 +1669,7 @@ const PRODUCTS = [
     cat: "redes", brand: "ugreen",
     price: 55, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
     img: "img/productos/ugreen-cable-de-carga-usb-c-usb-c.webp",
-    gallery: ["img/productos/ugreen-cable-de-carga-usb-c-usb-c.webp"],
+    gallery: ["img/productos/ugreen-cable-de-carga-usb-c-usb-c.webp", "img/productos/50997-image-1-1726005944770.webp", "img/productos/50997-image-2-1726005944770.webp", "img/productos/50997-image-3-1726005944770.webp", "img/productos/50997-image-4-1726005944770.webp", "img/productos/50997-image-5-1726005944770.webp"],
     desc: "Carga tus dispositivos de manera rápida y eficiente con este cable USB-C a USB-C con tecnología Power Delivery (PD) de hasta 60W y 3A. Diseñado para smartphones, tablets, laptops y otros dispositivos compatibles con USB-C, ofreciendo una conexión segura, estable y de alto rendimiento para tus necesidades diarias.",
     features: ["Carga rápida Power Delivery (PD) de hasta 60W", "Corriente de hasta 3A", "Conector USB-C a USB-C", "Alta compatibilidad", "Diseño resistente y duradero", "Diseño resistente y duradero"],
   },
@@ -1187,7 +1680,8 @@ const PRODUCTS = [
     name: "CABLE DE CARGA USB-A a USB-C 18W",
     sku: "60126",
     cat: "redes", brand: "ugreen",
-    price: 66, oldPrice: null, rating: 4.5, reviews: 0, badge: null,
+    price: 66, oldPrice: null, rating: 4.5, reviews: 0, badge: "Nuevo",
+    stock: 4,
     img: "img/productos/cable-de-carga-usb-a-usb-c-18w.webp",
     gallery: ["img/productos/cable-de-carga-usb-a-usb-c-18w.webp"],
     desc: "Cable USB-A a USB-C con carga rápida de hasta 18W, diseñado con revestimiento de nylon trenzado ultra resistente y conectores de aleación de aluminio para mayor durabilidad. Ideal para cargar y sincronizar dispositivos con una velocidad de transferencia de hasta 480 Mbps.",
@@ -1369,7 +1863,8 @@ const PRODUCTS = [
     name: "HITUNE S3 AURICULARES OPEN-EAR",
     sku: "45785",
     cat: "audio-video", brand: "ugreen",
-    price: 299, oldPrice: null, rating: 4.7, reviews: 0, badge: null,
+    price: 299, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    stock: 0,
     img: "img/productos/hitune-s3-auriculares-open-ear.webp",
     gallery: ["img/productos/hitune-s3-auriculares-open-ear.webp"],
     desc: "UGREEN HiTune S3 Open-Ear son audífonos inalámbricos de diseño abierto que ofrecen comodidad, libertad y seguridad durante todo el día. Equipados con Bluetooth 5.4, brindan una conexión rápida y estable, mientras que su cancelación de ruido ambiental (ENC) mejora la calidad de las llamadas. Disfruta de un sonido nítido, baja latencia para juegos y videos, carga ultrarrápida y hasta 30 horas de autonomía con el estuche de carga. Su certificación IPX5 los hace resistentes al agua y al sudor, ideales para entrenamientos y actividades al aire libre.",
@@ -1443,6 +1938,45 @@ const PRODUCTS = [
 
 
   // --- zkteco  Seguridad y biometría --- ///
+  
+   {
+    id: "lector-de-codigo-de-barras-laser-inalamb",
+    alta: "2026-09-14",
+    name: "LECTOR DE CÓDIGO DE BARRAS LÁSER INALÁMB",
+    sku: "ZKB103S",
+    cat: "seguridad", brand: "zkteco",
+    price: 680, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/ZKB103S-image-1-15-37-14.webp",
+    gallery: ["img/productos/ZKB103S-image-1-15-37-14.webp", "img/productos/ZKB103S-image-2-15-37-29.webp", "img/productos/ZKB103S-image-3-15-38-34.webp"],
+    desc: "LECTOR DE CÓDIGO DE BARRAS LÁSER INALÁMBRICO 1D *PROFUNDIDAD DECODIFICACIÓN: 3-40 CM (DEPENDE DEL CÓDIGO DE BARRAS) *BATERÍA: 2000 MAH *COM: WIRELESS 2,4 GHZ",
+    features: [],
+  },
+
+  {
+    id: "control-de-acceso-pantalla-2-8",
+    alta: "2026-09-14",
+    name: "CONTROL DE ACCESO *PANTALLA 2,8\"",
+    sku: "SenseFace 3A",
+    cat: "seguridad", brand: "zkteco",
+    price: 2640, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/SENSEFACE3A-image-0-1723743791114.webp",
+    gallery: ["img/productos/SENSEFACE3A-image-0-1723743791114.webp", "img/productos/SENSEFACE3A-image-0-1723743843174.webp"],
+    desc: "CONTROL DE ACCESO TOUCH 2,8\" *CAP. ROSTRO: 3000 *CAP. HUELLA: 6000 *CAP. RFID: 6000 (125kHz) *CAP. REG.:150000 *COM: TCP/IP, USB Host *ALIM: 12V 1,5A INCLUYE",
+    features: [],
+  },
+  {
+    id: "lector-de-huella-digital-rfid-125-khz",
+    alta: "2026-09-14",
+    name: "LECTOR DE HUELLA DIGITAL + RFID 125 KHZ",
+    sku: "FR1200",
+    cat: "seguridad", brand: "zkteco",
+    price: 1745, oldPrice: null, rating: 4.7, reviews: 0, badge: "Nuevo",
+    img: "img/productos/F1720562081828.webp",
+    gallery: ["img/productos/F1720562081828.webp", "img/productos/F1720562088018.webp"],
+    desc: "LECTOR DE HUELLA DIGITAL + LECTOR RFID 125 KHZ *COMUNICACION:RS845 * GRADO PROTECCION IP65",
+    features: ["Especificaciones Técnicas", "CPU\t324MHz", "Sensor Óptico\tSensor Óptico ZK", "Comunicación\tRS485", "Funciones Estándar\tMódulo de Tarjetas RFID", "Funciones Opcionales\tMódulo de Tarjetas MIFARE", "Indicador\tAudiovisual (Buzzer y LED)", "Fuete de Alimentación\t12VCD", "Temperatura de Operación\t0°c a 45°c", "Dimensiones\t50 x 102 x 37 mm", "Índice de Protección\tIP65"],
+  },
+  
   {
     id: "control-asistencia-pantalla-2-8",
     alta: "2026-09-08",

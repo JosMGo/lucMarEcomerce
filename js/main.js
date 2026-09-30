@@ -393,6 +393,11 @@
     if (burger) burger.addEventListener("click", openD);
     if (backdrop) backdrop.addEventListener("click", closeD);
     $$("[data-close-drawer]").forEach((b) => b.addEventListener("click", closeD));
+    // Cualquier enlace del menú lo cierra. Hacía falta por los que apuntan a la
+    // misma página (Marcas es /#marcas): estando ya en la portada no se carga
+    // nada nuevo, así que el menú seguía abierto tapando la sección y con el
+    // scroll de la página bloqueado.
+    if (drawer) drawer.addEventListener("click", (e) => { if (e.target.closest("a")) closeD(); });
 
     // Búsqueda → catálogo
     $$("form[data-search]").forEach((f) => {
@@ -713,6 +718,42 @@
   /* ==========================================================================
      PÁGINA: FICHA DE PRODUCTO
      ========================================================================== */
+
+  /* El id no corresponde a ningún producto: enlace antiguo, id mal escrito o un
+     catálogo guardado en el navegador. Se avisa y se ofrece salida. */
+  function productoNoEncontrado(root) {
+    document.title = "Producto no encontrado — Lucmar";
+    const md = $('meta[name="description"]');
+    if (md) md.setAttribute("content", "Este producto ya no está disponible en Lucmar.");
+
+    // Sin esto, Google podría indexar esta dirección como si fuera un producto.
+    const robots = document.createElement("meta");
+    robots.name = "robots";
+    robots.content = "noindex";
+    document.head.appendChild(robots);
+
+    const ruta = $("#pdp-breadcrumbs");
+    if (ruta) ruta.innerHTML = `<a href="${RAIZ || "/"}">Inicio</a><span class="sep">/</span>
+      <a href="${RAIZ}catalogo.html">Catálogo</a><span class="sep">/</span>
+      <span>Producto no encontrado</span>`;
+
+    root.innerHTML = `<div class="empty-state">${ICON.search}
+      <h3>No encontramos este producto</h3>
+      <p>Puede que ya no esté disponible o que el enlace sea antiguo.</p>
+      <div style="display:grid; gap:.7rem; max-width:320px; margin:1.5rem auto 0">
+        <a class="btn btn-primary btn-block" href="${RAIZ}catalogo.html">Ver el catálogo</a>
+        <a class="btn btn-wa btn-block" href="${waLink(`¡Hola ${LUCMAR.brand}! 👋 Buscaba un producto que ya no encuentro en la web. ¿Me pueden ayudar?`)}"
+           target="_blank" rel="noopener" data-wa>${ICON.wa} Escríbenos por WhatsApp</a>
+      </div></div>`;
+
+    // La sección "Quizás también te interese" cuelga de la ficha: sin producto
+    // no tiene sentido y se quedaría con la cuadrícula vacía.
+    const relacionados = $("#related-grid");
+    if (relacionados && relacionados.closest("section")) relacionados.closest("section").hidden = true;
+
+    bindWaToast(root);
+  }
+
   function initProduct() {
     const root = $("#pdp");
     if (!root) return;
@@ -721,7 +762,11 @@
     // ejecutan JavaScript: leen las etiquetas og: del HTML tal cual llega.
     // producto.html?id=... se mantiene para los enlaces ya compartidos.
     const id = window.LUCMAR_PID || new URLSearchParams(location.search).get("id");
-    const p = PRODUCTS.find((x) => x.id === id) || PRODUCTS[0];
+    // Antes, un id desconocido mostraba PRODUCTS[0]: quien llegaba por un enlace
+    // viejo veía otro producto sin enterarse (y Google podía indexar esa
+    // dirección con el contenido equivocado). Mejor decirlo y ofrecer salida.
+    const p = PRODUCTS.find((x) => x.id === id);
+    if (!p) return productoNoEncontrado(root);
 
     document.title = `${p.name} — Lucmar`;
     const md = $('meta[name="description"]'); if (md) md.setAttribute("content", p.desc.slice(0, 155));
